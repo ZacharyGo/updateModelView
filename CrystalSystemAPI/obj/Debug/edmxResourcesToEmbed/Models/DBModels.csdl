@@ -1,0 +1,957 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CerinimbusDevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cvAssemblyOrdersUnlinked">
+    <Key>
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="parent" />
+      <PropertyRef Name="NumSiblings" />
+    </Key>
+    <Property Name="Session" Type="Int32" />
+    <Property Name="TransactionNumber" Type="Int32" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+    <Property Name="Reference" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Document" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentNum" Type="Int32" />
+    <Property Name="DocumentDate" Type="DateTime" Precision="3" />
+    <Property Name="DocumentType" Type="String" MaxLength="1" />
+    <Property Name="AODescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductionWorkflowStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AOQuantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="FProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+    <Property Name="FProductType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="FProductRowType" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FProductCategory" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FProductSalesCategory" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="AlternateProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+    <Property Name="UPC" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+    <Property Name="FProductDescription" Type="String" MaxLength="4095" FixedLength="false" Unicode="false" />
+    <Property Name="LotNumber" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="WarehouseID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="WarehouseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PostedToGL" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToINV" Type="Boolean" Nullable="false" />
+    <Property Name="parent" Type="Int32" Nullable="false" />
+    <Property Name="NumSiblings" Type="Int32" Nullable="false" />
+    <Property Name="NumTransactions" Type="Int32" />
+    <Property Name="CompanyName" Type="String" MaxLength="59" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="TaxByCategory" />
+      <PropertyRef Name="TaxInPrice" />
+      <PropertyRef Name="AllowOverride" />
+      <PropertyRef Name="AllowZero" />
+      <PropertyRef Name="VariableWeight" />
+      <PropertyRef Name="VariableLength" />
+      <PropertyRef Name="PriceByCategory" />
+      <PropertyRef Name="Discontinued" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="Popup" />
+      <PropertyRef Name="POPopup" />
+      <PropertyRef Name="VariableHeight" />
+      <PropertyRef Name="VariableVolume" />
+      <PropertyRef Name="VariableWidth" />
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="NotForResale" />
+      <PropertyRef Name="MaintainInventoryType" />
+      <PropertyRef Name="AvailOnWeb" />
+      <PropertyRef Name="ShipCompleteLots" />
+      <PropertyRef Name="Discountable" />
+    </Key>
+    <Property Name="ProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SalesGUIDTaxCode" Type="Guid" />
+    <Property Name="PurchaseGUIDTaxCode" Type="Guid" />
+    <Property Name="TaxByCategory" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDTaxCategory" Type="Guid" />
+    <Property Name="TaxInPrice" Type="Boolean" Nullable="false" />
+    <Property Name="AllowOverride" Type="Boolean" Nullable="false" />
+    <Property Name="AllowZero" Type="Boolean" Nullable="false" />
+    <Property Name="CommissionType" Type="Int16" />
+    <Property Name="CommPct" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="CommAmt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Weight" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Length" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="VariableWeight" Type="Boolean" Nullable="false" />
+    <Property Name="VariableLength" Type="Boolean" Nullable="false" />
+    <Property Name="Specification" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ProductPriceCategory" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PriceByCategory" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDProductClass" Type="Guid" />
+    <Property Name="LeadTime" Type="Int32" />
+    <Property Name="SalesCategory" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+    <Property Name="CostMethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ProductType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="InventoryControlType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="AssemblyType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CountCycle" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Popup" Type="Boolean" Nullable="false" />
+    <Property Name="PONote" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="POPopup" Type="Boolean" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Height" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Size" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="VariableHeight" Type="Boolean" Nullable="false" />
+    <Property Name="VariableVolume" Type="Boolean" Nullable="false" />
+    <Property Name="VariableWidth" Type="Boolean" Nullable="false" />
+    <Property Name="Volume" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Width" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="TechSpec" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WebAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AltDescription" Type="String" MaxLength="4095" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="4095" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDProduct" Type="Guid" Nullable="false" />
+    <Property Name="NotForResale" Type="Boolean" Nullable="false" />
+    <Property Name="MaintainInventoryType" Type="Int32" Nullable="false" />
+    <Property Name="AvailOnWeb" Type="Boolean" Nullable="false" />
+    <Property Name="ProductPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ShipCompleteLots" Type="Boolean" Nullable="false" />
+    <Property Name="AltWeight" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltLength" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltHeight" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltWidth" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltVolume" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltUnitsPerPalletLayer" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="PalletLayers" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="InnerPackQty" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="OuterPackQty" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Discountable" Type="Boolean" Nullable="false" />
+    <Property Name="SalesUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PurchaseUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PackageUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="LandedCostFactor" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="C_ControlGroup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_ControlDataType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_ControlMethod" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="C_ControlSpec" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="C_ControlMin" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="C_ControlMax" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AlternateProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+    <Property Name="UPC" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+    <Property Name="ShortDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PiecesPerStockUnit" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="ProductClassID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ItemType" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="Keywords" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ExternalDocument" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AlternateUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="AlternateUnitConversionFactor" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="PreferredGUIDVendor" Type="Guid" />
+    <Property Name="PreferredVendorID" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="ListPrice" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="ListPriceType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ListPriceUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ListPriceTaxIncluded" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ProductAltID">
+    <Key>
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="GUIDProduct" Type="Guid" Nullable="false" />
+    <Property Name="ProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AlternateProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="4095" FixedLength="false" Unicode="false" />
+    <Property Name="UPC" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbAccess">
+    <Key>
+      <PropertyRef Name="GUIDAccess" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="AutoOpenAlerts" />
+      <PropertyRef Name="AutoOpenActivities" />
+      <PropertyRef Name="AutoOpenSchedule" />
+      <PropertyRef Name="AutoOpenDashboard" />
+      <PropertyRef Name="AutoOpenOrderManager" />
+      <PropertyRef Name="RestrictBySalesperson" />
+      <PropertyRef Name="EmailSettingsOverride" />
+      <PropertyRef Name="SMTPEncryption" />
+      <PropertyRef Name="SMTPAuthRequired" />
+    </Key>
+    <Property Name="GUIDAccess" Type="Guid" Nullable="false" />
+    <Property Name="ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="69" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EMail" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+    <Property Name="EmailSignature" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BCCAddress" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+    <Property Name="MessageAddr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDSalesperson" Type="Guid" />
+    <Property Name="AutoOpenAlerts" Type="Boolean" Nullable="false" />
+    <Property Name="AutoOpenActivities" Type="Boolean" Nullable="false" />
+    <Property Name="AutoOpenSchedule" Type="Boolean" Nullable="false" />
+    <Property Name="DefaultActivityType" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DefaultScheduleClass" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AutoOpenDashboard" Type="Boolean" Nullable="false" />
+    <Property Name="AutoOpenOrderManager" Type="Boolean" Nullable="false" />
+    <Property Name="RestrictBySalesperson" Type="Boolean" Nullable="false" />
+    <Property Name="EmailSettingsOverride" Type="Boolean" Nullable="false" />
+    <Property Name="SMTPServer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTPUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTPPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailType" Type="Int32" />
+    <Property Name="SMTPEncryption" Type="Int32" Nullable="false" />
+    <Property Name="SMTPAuthRequired" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbAccessPermission">
+    <Key>
+      <PropertyRef Name="GUIDAccessPermission" />
+      <PropertyRef Name="GUIDAccess" />
+      <PropertyRef Name="PermissionGroup" />
+      <PropertyRef Name="Permission" />
+      <PropertyRef Name="Option" />
+    </Key>
+    <Property Name="GUIDAccessPermission" Type="Guid" Nullable="false" />
+    <Property Name="GUIDAccess" Type="Guid" Nullable="false" />
+    <Property Name="PermissionGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Permission" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Option" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbAccessPermissionGroup">
+    <Key>
+      <PropertyRef Name="PermissionGroup" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="PermissionGroup" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbAccessPermissionMaster">
+    <Key>
+      <PropertyRef Name="PermissionGroup" />
+      <PropertyRef Name="Permission" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="Options" />
+      <PropertyRef Name="Default" />
+    </Key>
+    <Property Name="PermissionGroup" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Permission" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Options" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Default" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbCustomDataList">
+    <Key>
+      <PropertyRef Name="ListID" />
+      <PropertyRef Name="Sequence" />
+      <PropertyRef Name="ListItem" />
+    </Key>
+    <Property Name="ListID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" />
+    <Property Name="ListItem" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbCustomField">
+    <Key>
+      <PropertyRef Name="GUIDCustomField" />
+      <PropertyRef Name="TableID" />
+      <PropertyRef Name="TableName" />
+      <PropertyRef Name="Sequence" />
+      <PropertyRef Name="Label" />
+      <PropertyRef Name="FieldName" />
+      <PropertyRef Name="FieldType" />
+      <PropertyRef Name="Extra" />
+    </Key>
+    <Property Name="GUIDCustomField" Type="Guid" Nullable="false" />
+    <Property Name="TableID" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TableName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" />
+    <Property Name="Label" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FieldName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FieldType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Extra" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbDocument">
+    <Key>
+      <PropertyRef Name="GUIDDocument" />
+    </Key>
+    <Property Name="GUIDDocument" Type="Guid" Nullable="false" />
+    <Property Name="GUIDLink" Type="Guid" />
+    <Property Name="LinkType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FileExtension" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FileSize" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
+    <Property Name="AddedBy" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentData" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbEmployee">
+    <Key>
+      <PropertyRef Name="GUIDEmployee" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="GUIDEmployee" Type="Guid" Nullable="false" />
+    <Property Name="EmployeeListID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeId" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="PayrollEmployeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CostRate" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="BillingRate" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="LaborRate" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Salutation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address3" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address4" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+    <Property Name="HomePhoneNum" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+    <Property Name="EmergPhoneNum" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+    <Property Name="EMail" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="LocationID" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbINVLotSerial">
+    <Key>
+      <PropertyRef Name="GUIDINVLotSerial" />
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="Number" />
+    </Key>
+    <Property Name="GUIDINVLotSerial" Type="Guid" Nullable="false" />
+    <Property Name="GUIDProduct" Type="Guid" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+    <Property Name="Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Specification" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbINVRegister">
+    <Key>
+      <PropertyRef Name="PKIDINVRegister" />
+      <PropertyRef Name="GUIDINVRegister" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PostedToAP" />
+    </Key>
+    <Property Name="PKIDINVRegister" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUIDINVRegister" Type="Guid" Nullable="false" />
+    <Property Name="RegNumber" Type="Int32" />
+    <Property Name="RegDate" Type="DateTime" Precision="3" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+    <Property Name="Source" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="OpenedBy" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PostedToINV" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToINVBy" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DatePostedToINV" Type="DateTime" Precision="3" />
+    <Property Name="PostedToGL" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToGLBy" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DatePostedToGL" Type="DateTime" Precision="3" />
+    <Property Name="PostedToAP" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToAPBy" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DatePostedToAP" Type="DateTime" Precision="3" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GLTransactionBatch" Type="Int32" />
+    <Property Name="TransactionPeriod" Type="Int16" />
+    <Property Name="TransactionYear" Type="Int16" />
+    <Property Name="ParentRegNumber" Type="Int32" />
+    <Property Name="GUIDLandedCostPODetail" Type="Guid" />
+    <Property Name="VoidedDate" Type="DateTime" Precision="3" />
+    <Property Name="VoidedBy" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDOrder" Type="Guid" />
+  </EntityType>
+  <EntityType Name="tbINVTransaction">
+    <Key>
+      <PropertyRef Name="PKIDINVTransaction" />
+      <PropertyRef Name="GUIDINVTransaction" />
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PostedToAP" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="ExchangeRate" />
+      <PropertyRef Name="TaxIncluded" />
+      <PropertyRef Name="BeginningOfDay" />
+    </Key>
+    <Property Name="PKIDINVTransaction" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUIDINVTransaction" Type="Guid" Nullable="false" />
+    <Property Name="RegNumber" Type="Int32" />
+    <Property Name="TransactionNumber" Type="Int32" />
+    <Property Name="GUIDWarehouse" Type="Guid" />
+    <Property Name="GUIDToWarehouse" Type="Guid" />
+    <Property Name="DocumentType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentDate" Type="DateTime" Precision="3" />
+    <Property Name="AssemblyType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VendorInvoiceID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="GLTransactionNumber" Type="Int32" />
+    <Property Name="GUIDGLInventoryAccount" Type="Guid" />
+    <Property Name="GUIDGLOffsetAccount" Type="Guid" />
+    <Property Name="PostedToGL" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToAP" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToINV" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDVendor" Type="Guid" />
+    <Property Name="VendorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PONumber" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="19" Scale="7" Nullable="false" />
+    <Property Name="Reference" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Document" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionPeriod" Type="Int32" />
+    <Property Name="GUIDProductionWorkflowStatus" Type="Guid" />
+    <Property Name="TaxIncluded" Type="Boolean" Nullable="false" />
+    <Property Name="BeginningOfDay" Type="Boolean" Nullable="false" />
+    <Property Name="InvoiceAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SalesTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GUIDInProgressUser" Type="Guid" />
+    <Property Name="InProgressDate" Type="DateTime" Precision="3" />
+    <Property Name="GUIDOrderDetail" Type="Guid" />
+  </EntityType>
+  <EntityType Name="tbINVTransactionDetail">
+    <Key>
+      <PropertyRef Name="GUIDINVTransactionDetail" />
+      <PropertyRef Name="PKIDINVTransactionDetail" />
+      <PropertyRef Name="TransactionType" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="PostedToAP" />
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PriorPeriodAdjustment" />
+      <PropertyRef Name="DoNotSync" />
+    </Key>
+    <Property Name="GUIDINVTransactionDetail" Type="Guid" Nullable="false" />
+    <Property Name="PKIDINVTransactionDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegNumber" Type="Int32" />
+    <Property Name="TransactionNumber" Type="Int32" />
+    <Property Name="TransactionType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PONumber" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDProduct" Type="Guid" />
+    <Property Name="ProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+    <Property Name="VendorProductID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="4095" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDINVLotSerial" Type="Guid" />
+    <Property Name="QuantityOrdered" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Quantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="ComponentQuantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AssemblyComponentQuantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AssemblyQuantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="QuantityRejected" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Unit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayUnitFactor" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="ValueDiscrepancy" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UnitCost" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="CostUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FreezeCount" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="PhysicalCount" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="CountLineNumber" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ToLocation" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDWHLocation" Type="Guid" />
+    <Property Name="GUIDToWHLocation" Type="Guid" />
+    <Property Name="PostedToINV" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToAP" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToGL" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceLineNumber" Type="Int32" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="OrderNumber" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+    <Property Name="GUIDWarehouse" Type="Guid" />
+    <Property Name="CostLayer" Type="Int32" />
+    <Property Name="PostedTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="TransactionLine" Type="Int32" />
+    <Property Name="GLTransactionBatch" Type="Int32" />
+    <Property Name="TransactionPeriod" Type="Int32" />
+    <Property Name="TransactionYear" Type="Int32" />
+    <Property Name="GLTransactionLine" Type="Int32" />
+    <Property Name="AmountPostedToGL" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GUIDJournal" Type="Guid" />
+    <Property Name="GUIDDebitAccount" Type="Guid" />
+    <Property Name="GUIDCreditAccount" Type="Guid" />
+    <Property Name="GUIDInvoiceDetail" Type="Guid" />
+    <Property Name="GUIDOrderDetailLot" Type="Guid" />
+    <Property Name="GUIDPODetail" Type="Guid" />
+    <Property Name="PriorPeriodAdjustment" Type="Boolean" Nullable="false" />
+    <Property Name="FromCostMethod" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ToCostMethod" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DoNotSync" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDTaxCode" Type="Guid" />
+    <Property Name="SalesTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GUIDLayerBatch" Type="Guid" />
+    <Property Name="GUIDAssociatedITD" Type="Guid" />
+  </EntityType>
+  <EntityType Name="cvINVTransactionDetailCrystalControl">
+    <Key>
+      <PropertyRef Name="GUIDINVTransactionDetail" />
+      <PropertyRef Name="PKIDINVTransactionDetail" />
+      <PropertyRef Name="TransactionType" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="PostedToAP" />
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PriorPeriodAdjustment" />
+      <PropertyRef Name="DoNotSync" />
+    </Key>
+    <Property Name="GUIDINVTransactionDetail" Type="Guid" Nullable="false" />
+    <Property Name="PKIDINVTransactionDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegNumber" Type="Int32" />
+    <Property Name="TransactionNumber" Type="Int32" />
+    <Property Name="TransactionType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PONumber" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDProduct" Type="Guid" />
+    <Property Name="ProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" />
+    <Property Name="VendorProductID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="4095" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDINVLotSerial" Type="Guid" />
+    <Property Name="QuantityOrdered" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Quantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="ComponentQuantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AssemblyComponentQuantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AssemblyQuantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="QuantityRejected" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Unit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayUnitFactor" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="ValueDiscrepancy" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UnitCost" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="CostUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FreezeCount" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="PhysicalCount" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="CountLineNumber" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ToLocation" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDWHLocation" Type="Guid" />
+    <Property Name="GUIDToWHLocation" Type="Guid" />
+    <Property Name="PostedToINV" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToAP" Type="Boolean" Nullable="false" />
+    <Property Name="PostedToGL" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceLineNumber" Type="Int32" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="OrderNumber" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+    <Property Name="GUIDWarehouse" Type="Guid" />
+    <Property Name="CostLayer" Type="Int32" />
+    <Property Name="PostedTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="TransactionLine" Type="Int32" />
+    <Property Name="GLTransactionBatch" Type="Int32" />
+    <Property Name="TransactionPeriod" Type="Int32" />
+    <Property Name="TransactionYear" Type="Int32" />
+    <Property Name="GLTransactionLine" Type="Int32" />
+    <Property Name="AmountPostedToGL" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GUIDJournal" Type="Guid" />
+    <Property Name="GUIDDebitAccount" Type="Guid" />
+    <Property Name="GUIDCreditAccount" Type="Guid" />
+    <Property Name="GUIDInvoiceDetail" Type="Guid" />
+    <Property Name="GUIDOrderDetailLot" Type="Guid" />
+    <Property Name="GUIDPODetail" Type="Guid" />
+    <Property Name="PriorPeriodAdjustment" Type="Boolean" Nullable="false" />
+    <Property Name="FromCostMethod" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ToCostMethod" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DoNotSync" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDTaxCode" Type="Guid" />
+    <Property Name="SalesTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GUIDLayerBatch" Type="Guid" />
+    <Property Name="GUIDAssociatedITD" Type="Guid" />
+    <Property Name="FProductCategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VariableQuantity" Type="Boolean" Nullable="true" />
+    <Property Name="FSignature" Type="Binary" />
+    <Property Name="Sequence" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbNumber">
+    <Key>
+      <PropertyRef Name="NumberType" />
+      <PropertyRef Name="NoWrap" />
+    </Key>
+    <Property Name="NumberType" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NextNumber" Type="Int32" />
+    <Property Name="LowNumber" Type="Int32" />
+    <Property Name="HighNumber" Type="Int32" />
+    <Property Name="Prefix" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Suffix" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NoWrap" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbProduct">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Taxable" />
+      <PropertyRef Name="TaxByCategory" />
+      <PropertyRef Name="TaxInPrice" />
+      <PropertyRef Name="AllowOverride" />
+      <PropertyRef Name="AllowZero" />
+      <PropertyRef Name="VariableWeight" />
+      <PropertyRef Name="VariableLength" />
+      <PropertyRef Name="PriceByCategory" />
+      <PropertyRef Name="Discontinued" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="Popup" />
+      <PropertyRef Name="POPopup" />
+      <PropertyRef Name="VariableHeight" />
+      <PropertyRef Name="VariableVolume" />
+      <PropertyRef Name="VariableWidth" />
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="NotForResale" />
+      <PropertyRef Name="MaintainInventoryType" />
+      <PropertyRef Name="AvailOnWeb" />
+      <PropertyRef Name="ShipCompleteLots" />
+      <PropertyRef Name="Discountable" />
+    </Key>
+    <Property Name="ProductID" Type="String" MaxLength="159" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Taxable" Type="Boolean" Nullable="false" />
+    <Property Name="SalesGUIDTaxCode" Type="Guid" />
+    <Property Name="PurchaseGUIDTaxCode" Type="Guid" />
+    <Property Name="TaxByCategory" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDTaxCategory" Type="Guid" />
+    <Property Name="TaxInPrice" Type="Boolean" Nullable="false" />
+    <Property Name="AllowOverride" Type="Boolean" Nullable="false" />
+    <Property Name="AllowZero" Type="Boolean" Nullable="false" />
+    <Property Name="CommissionType" Type="Int16" />
+    <Property Name="CommPct" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="CommAmt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Unit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Weight" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Length" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="VariableWeight" Type="Boolean" Nullable="false" />
+    <Property Name="VariableLength" Type="Boolean" Nullable="false" />
+    <Property Name="Specification" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ProductPriceCategory" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PriceByCategory" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDProductClass" Type="Guid" />
+    <Property Name="LeadTime" Type="Int32" />
+    <Property Name="SalesCategory" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+    <Property Name="CostMethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ProductType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="InventoryControlType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="AssemblyType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CountCycle" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Popup" Type="Boolean" Nullable="false" />
+    <Property Name="PONote" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="POPopup" Type="Boolean" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Height" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Size" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="VariableHeight" Type="Boolean" Nullable="false" />
+    <Property Name="VariableVolume" Type="Boolean" Nullable="false" />
+    <Property Name="VariableWidth" Type="Boolean" Nullable="false" />
+    <Property Name="Volume" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Width" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="TechSpec" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WebAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AltDescription" Type="String" MaxLength="4095" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="4095" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDProduct" Type="Guid" Nullable="false" />
+    <Property Name="NotForResale" Type="Boolean" Nullable="false" />
+    <Property Name="MaintainInventoryType" Type="Int32" Nullable="false" />
+    <Property Name="AvailOnWeb" Type="Boolean" Nullable="false" />
+    <Property Name="ProductPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ShipCompleteLots" Type="Boolean" Nullable="false" />
+    <Property Name="AltWeight" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltLength" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltHeight" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltWidth" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltVolume" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="AltUnitsPerPalletLayer" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="PalletLayers" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="InnerPackQty" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="OuterPackQty" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Discountable" Type="Boolean" Nullable="false" />
+    <Property Name="SalesUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PurchaseUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PackageUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="LandedCostFactor" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="C_ControlGroup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_ControlDataType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_ControlMethod" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="C_ControlSpec" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="C_ControlMin" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="C_ControlMax" Type="Decimal" Precision="19" Scale="7" />
+  </EntityType>
+  <EntityType Name="tbProductClass">
+    <Key>
+      <PropertyRef Name="GUIDProductClass" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="GUIDProductClass" Type="Guid" Nullable="false" />
+    <Property Name="ItemListID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProductClassID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDSalesAccount" Type="Guid" />
+    <Property Name="GUIDReturnsAccount" Type="Guid" />
+    <Property Name="GUIDTradeDiscountAccount" Type="Guid" />
+    <Property Name="GUIDCGSAccount" Type="Guid" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="GUIDCGSAdjAccount" Type="Guid" />
+    <Property Name="GUIDClass" Type="Guid" />
+  </EntityType>
+  <EntityType Name="tbProductComponent">
+    <Key>
+      <PropertyRef Name="GUIDProductComponent" />
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="ComponentGUIDProduct" />
+      <PropertyRef Name="VariableQuantity" />
+    </Key>
+    <Property Name="GUIDProductComponent" Type="Guid" Nullable="false" />
+    <Property Name="GUIDProduct" Type="Guid" Nullable="false" />
+    <Property Name="ComponentType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ComponentGUIDProduct" Type="Guid" Nullable="false" />
+    <Property Name="GUIDComponentWarehouse" Type="Guid" />
+    <Property Name="Quantity" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="VariableQuantity" Type="Boolean" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="Sequence" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbProductControlType">
+    <Key>
+      <PropertyRef Name="InventoryControlType" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="InventoryControlType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbProductCostMethod">
+    <Key>
+      <PropertyRef Name="CostMethod" />
+      <PropertyRef Name="LotSerialNumbered" />
+      <PropertyRef Name="Standard" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="CostMethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="LotSerialNumbered" Type="Boolean" Nullable="false" />
+    <Property Name="Standard" Type="Boolean" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbProductionWorkflowStatu">
+    <Key>
+      <PropertyRef Name="GUIDProductionWorkflowStatus" />
+      <PropertyRef Name="ProductionWorkFlowStatus" />
+    </Key>
+    <Property Name="GUIDProductionWorkflowStatus" Type="Guid" Nullable="false" />
+    <Property Name="ProductionWorkFlowStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Abbreviation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Sequence" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbProductSalesCategory">
+    <Key>
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="SalesCategory" />
+    </Key>
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SalesCategory" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GUIDSalesAccount" Type="Guid" />
+    <Property Name="GUIDReturnsAccount" Type="Guid" />
+    <Property Name="GUIDTradeDiscount" Type="Guid" />
+    <Property Name="GUIDCOGSAccount" Type="Guid" />
+    <Property Name="GUIDClass" Type="Guid" />
+  </EntityType>
+  <EntityType Name="tbProductType">
+    <Key>
+      <PropertyRef Name="ProductType" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="ProductType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbProductUnit">
+    <Key>
+      <PropertyRef Name="BaseUnit" />
+      <PropertyRef Name="Unit" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="Discrete" />
+    </Key>
+    <Property Name="BaseUnit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Factor" Type="Decimal" Precision="19" Scale="7" />
+    <Property Name="FactorBasis" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Discrete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbSalespersonInfo">
+    <Key>
+      <PropertyRef Name="GUIDSalesperson" />
+      <PropertyRef Name="SalespersonID" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="GUIDSalesperson" Type="Guid" Nullable="false" />
+    <Property Name="SalespersonListID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SalespersonID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="LinkType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GUIDLink" Type="Guid" />
+    <Property Name="GUIDSalesAccount" Type="Guid" />
+    <Property Name="GUIDReturnsAccount" Type="Guid" />
+    <Property Name="GUIDTradeDiscount" Type="Guid" />
+    <Property Name="GUIDCOGSAccount" Type="Guid" />
+    <Property Name="GUIDClass" Type="Guid" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Precision="3" />
+    <Property Name="TimeModified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbSystem">
+    <Key>
+      <PropertyRef Name="GUID" />
+      <PropertyRef Name="SMTPEncryption" />
+      <PropertyRef Name="SMTPAuthRequired" />
+    </Key>
+    <Property Name="GUID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="59" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+    <Property Name="WebAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EMail" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+    <Property Name="DBVersion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address3" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address4" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="EIN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SSN" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="FirstMonthFiscalYear" Type="Int32" />
+    <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="SMTPServer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTPUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTPPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailType" Type="Int32" />
+    <Property Name="SMTPEncryption" Type="Int32" Nullable="false" />
+    <Property Name="SMTPAuthRequired" Type="Boolean" Nullable="false" />
+    <Property Name="QBMSConnectionTicket" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="QuickBooksCountry" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="DemoBaseDate" Type="DateTime" Precision="3" />
+    <Property Name="MetricsLastSentDate" Type="DateTime" Precision="3" />
+    <Property Name="GUIDHomeCurrency" Type="Guid" />
+    <Property Name="GUIHexColor" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbSystemOption">
+    <Key>
+      <PropertyRef Name="OptionGroup" />
+      <PropertyRef Name="Option" />
+    </Key>
+    <Property Name="OptionGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Option" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbWarehouse">
+    <Key>
+      <PropertyRef Name="GUIDWarehouse" />
+      <PropertyRef Name="MaintainInventory" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="GUIDWarehouse" Type="Guid" Nullable="false" />
+    <Property Name="WarehouseID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AssociatedGUIDBranch" Type="Guid" />
+    <Property Name="GUIDInventoryAccount" Type="Guid" />
+    <Property Name="GUIDPurchaseAccount" Type="Guid" />
+    <Property Name="GUIDAdjustmentAccount" Type="Guid" />
+    <Property Name="GUIDAssemblyLaborAccount" Type="Guid" />
+    <Property Name="GUIDAssemblyOtherCostAccount" Type="Guid" />
+    <Property Name="GUIDIssueAccount" Type="Guid" />
+    <Property Name="GUIDNonInvOffsetAccount" Type="Guid" />
+    <Property Name="GUIDLaborOffsetAccount" Type="Guid" />
+    <Property Name="GUIDOtherChargeOffsetAccount" Type="Guid" />
+    <Property Name="GUIDShippingOffsetAccount" Type="Guid" />
+    <Property Name="GUIDLandedCostOffsetAccount" Type="Guid" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShipToAttentionOf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address3" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="Address4" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="EMail" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+    <Property Name="ShipVia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FOB" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MaintainInventory" Type="Boolean" Nullable="false" />
+    <Property Name="LaborCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="GUIDGainLossAccount" Type="Guid" />
+    <Property Name="GUIDPartner" Type="Guid" />
+  </EntityType>
+  <EntityType Name="tbWHLocation">
+    <Key>
+      <PropertyRef Name="GUIDWHLocation" />
+      <PropertyRef Name="GUIDWarehouse" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="GUIDWHLocation" Type="Guid" Nullable="false" />
+    <Property Name="GUIDWarehouse" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sequence" Type="Int32" />
+    <Property Name="Zone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbWorkFlowStatu">
+    <Key>
+      <PropertyRef Name="WorkFlowStatus" />
+    </Key>
+    <Property Name="WorkFlowStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SortOrder" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="CerinimbusDevEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cvAssemblyOrdersUnlinkeds" EntityType="Self.cvAssemblyOrdersUnlinked" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="ProductAltIDs" EntityType="Self.ProductAltID" />
+    <EntitySet Name="tbAccesses" EntityType="Self.tbAccess" />
+    <EntitySet Name="tbAccessPermissions" EntityType="Self.tbAccessPermission" />
+    <EntitySet Name="tbAccessPermissionGroups" EntityType="Self.tbAccessPermissionGroup" />
+    <EntitySet Name="tbAccessPermissionMasters" EntityType="Self.tbAccessPermissionMaster" />
+    <EntitySet Name="tbCustomDataLists" EntityType="Self.tbCustomDataList" />
+    <EntitySet Name="tbCustomFields" EntityType="Self.tbCustomField" />
+    <EntitySet Name="tbDocuments" EntityType="Self.tbDocument" />
+    <EntitySet Name="tbEmployees" EntityType="Self.tbEmployee" />
+    <EntitySet Name="tbINVLotSerials" EntityType="Self.tbINVLotSerial" />
+    <EntitySet Name="tbINVRegisters" EntityType="Self.tbINVRegister" />
+    <EntitySet Name="tbINVTransactions" EntityType="Self.tbINVTransaction" />
+    <EntitySet Name="tbINVTransactionDetails" EntityType="Self.tbINVTransactionDetail" />
+    <EntitySet Name="cvINVTransactionDetailCrystalControls" EntityType="Self.cvINVTransactionDetailCrystalControl" />
+    <EntitySet Name="tbNumbers" EntityType="Self.tbNumber" />
+    <EntitySet Name="tbProducts" EntityType="Self.tbProduct" />
+    <EntitySet Name="tbProductClasses" EntityType="Self.tbProductClass" />
+    <EntitySet Name="tbProductComponents" EntityType="Self.tbProductComponent" />
+    <EntitySet Name="tbProductControlTypes" EntityType="Self.tbProductControlType" />
+    <EntitySet Name="tbProductCostMethods" EntityType="Self.tbProductCostMethod" />
+    <EntitySet Name="tbProductionWorkflowStatus" EntityType="Self.tbProductionWorkflowStatu" />
+    <EntitySet Name="tbProductSalesCategories" EntityType="Self.tbProductSalesCategory" />
+    <EntitySet Name="tbProductTypes" EntityType="Self.tbProductType" />
+    <EntitySet Name="tbProductUnits" EntityType="Self.tbProductUnit" />
+    <EntitySet Name="tbSalespersonInfoes" EntityType="Self.tbSalespersonInfo" />
+    <EntitySet Name="tbSystems" EntityType="Self.tbSystem" />
+    <EntitySet Name="tbSystemOptions" EntityType="Self.tbSystemOption" />
+    <EntitySet Name="tbWarehouses" EntityType="Self.tbWarehouse" />
+    <EntitySet Name="tbWHLocations" EntityType="Self.tbWHLocation" />
+    <EntitySet Name="tbWorkFlowStatus" EntityType="Self.tbWorkFlowStatu" />
+  </EntityContainer>
+</Schema>

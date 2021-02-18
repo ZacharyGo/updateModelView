@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CerinimbusDevModelStoreContainer" CdmEntityContainer="CerinimbusDevEntities">
+    <EntitySetMapping Name="cvAssemblyOrdersUnlinkeds">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.cvAssemblyOrdersUnlinked">
+        <MappingFragment StoreEntitySet="cvAssemblyOrdersUnlinked">
+          <ScalarProperty Name="Session" ColumnName="Session" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Document" ColumnName="Document" />
+          <ScalarProperty Name="DocumentNum" ColumnName="DocumentNum" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="AODescription" ColumnName="AODescription" />
+          <ScalarProperty Name="ProductionWorkflowStatus" ColumnName="ProductionWorkflowStatus" />
+          <ScalarProperty Name="AOQuantity" ColumnName="AOQuantity" />
+          <ScalarProperty Name="FProductID" ColumnName="FProductID" />
+          <ScalarProperty Name="FProductType" ColumnName="FProductType" />
+          <ScalarProperty Name="FProductRowType" ColumnName="FProductRowType" />
+          <ScalarProperty Name="FProductCategory" ColumnName="FProductCategory" />
+          <ScalarProperty Name="FProductSalesCategory" ColumnName="FProductSalesCategory" />
+          <ScalarProperty Name="AlternateProductID" ColumnName="AlternateProductID" />
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+          <ScalarProperty Name="FProductDescription" ColumnName="FProductDescription" />
+          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+          <ScalarProperty Name="WarehouseID" ColumnName="WarehouseID" />
+          <ScalarProperty Name="WarehouseName" ColumnName="WarehouseName" />
+          <ScalarProperty Name="PostedToGL" ColumnName="PostedToGL" />
+          <ScalarProperty Name="PostedToINV" ColumnName="PostedToINV" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="NumSiblings" ColumnName="NumSiblings" />
+          <ScalarProperty Name="NumTransactions" ColumnName="NumTransactions" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SalesGUIDTaxCode" ColumnName="SalesGUIDTaxCode" />
+          <ScalarProperty Name="PurchaseGUIDTaxCode" ColumnName="PurchaseGUIDTaxCode" />
+          <ScalarProperty Name="TaxByCategory" ColumnName="TaxByCategory" />
+          <ScalarProperty Name="GUIDTaxCategory" ColumnName="GUIDTaxCategory" />
+          <ScalarProperty Name="TaxInPrice" ColumnName="TaxInPrice" />
+          <ScalarProperty Name="AllowOverride" ColumnName="AllowOverride" />
+          <ScalarProperty Name="AllowZero" ColumnName="AllowZero" />
+          <ScalarProperty Name="CommissionType" ColumnName="CommissionType" />
+          <ScalarProperty Name="CommPct" ColumnName="CommPct" />
+          <ScalarProperty Name="CommAmt" ColumnName="CommAmt" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="VariableWeight" ColumnName="VariableWeight" />
+          <ScalarProperty Name="VariableLength" ColumnName="VariableLength" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="ProductPriceCategory" ColumnName="ProductPriceCategory" />
+          <ScalarProperty Name="PriceByCategory" ColumnName="PriceByCategory" />
+          <ScalarProperty Name="GUIDProductClass" ColumnName="GUIDProductClass" />
+          <ScalarProperty Name="LeadTime" ColumnName="LeadTime" />
+          <ScalarProperty Name="SalesCategory" ColumnName="SalesCategory" />
+          <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+          <ScalarProperty Name="CostMethod" ColumnName="CostMethod" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="InventoryControlType" ColumnName="InventoryControlType" />
+          <ScalarProperty Name="AssemblyType" ColumnName="AssemblyType" />
+          <ScalarProperty Name="CountCycle" ColumnName="CountCycle" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Popup" ColumnName="Popup" />
+          <ScalarProperty Name="PONote" ColumnName="PONote" />
+          <ScalarProperty Name="POPopup" ColumnName="POPopup" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="VariableHeight" ColumnName="VariableHeight" />
+          <ScalarProperty Name="VariableVolume" ColumnName="VariableVolume" />
+          <ScalarProperty Name="VariableWidth" ColumnName="VariableWidth" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="TechSpec" ColumnName="TechSpec" />
+          <ScalarProperty Name="WebAddress" ColumnName="WebAddress" />
+          <ScalarProperty Name="AltDescription" ColumnName="AltDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="GUIDProduct" ColumnName="GUIDProduct" />
+          <ScalarProperty Name="NotForResale" ColumnName="NotForResale" />
+          <ScalarProperty Name="MaintainInventoryType" ColumnName="MaintainInventoryType" />
+          <ScalarProperty Name="AvailOnWeb" ColumnName="AvailOnWeb" />
+          <ScalarProperty Name="ProductPicture" ColumnName="ProductPicture" />
+          <ScalarProperty Name="ShipCompleteLots" ColumnName="ShipCompleteLots" />
+          <ScalarProperty Name="AltWeight" ColumnName="AltWeight" />
+          <ScalarProperty Name="AltLength" ColumnName="AltLength" />
+          <ScalarProperty Name="AltHeight" ColumnName="AltHeight" />
+          <ScalarProperty Name="AltWidth" ColumnName="AltWidth" />
+          <ScalarProperty Name="AltVolume" ColumnName="AltVolume" />
+          <ScalarProperty Name="AltUnitsPerPalletLayer" ColumnName="AltUnitsPerPalletLayer" />
+          <ScalarProperty Name="PalletLayers" ColumnName="PalletLayers" />
+          <ScalarProperty Name="InnerPackQty" ColumnName="InnerPackQty" />
+          <ScalarProperty Name="OuterPackQty" ColumnName="OuterPackQty" />
+          <ScalarProperty Name="Discountable" ColumnName="Discountable" />
+          <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
+          <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
+          <ScalarProperty Name="PackageUnit" ColumnName="PackageUnit" />
+          <ScalarProperty Name="LandedCostFactor" ColumnName="LandedCostFactor" />
+          <ScalarProperty Name="C_ControlGroup" ColumnName="_ControlGroup" />
+          <ScalarProperty Name="C_ControlDataType" ColumnName="_ControlDataType" />
+          <ScalarProperty Name="C_ControlMethod" ColumnName="_ControlMethod" />
+          <ScalarProperty Name="C_ControlSpec" ColumnName="_ControlSpec" />
+          <ScalarProperty Name="C_ControlMin" ColumnName="_ControlMin" />
+          <ScalarProperty Name="C_ControlMax" ColumnName="_ControlMax" />
+          <ScalarProperty Name="AlternateProductID" ColumnName="AlternateProductID" />
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="PiecesPerStockUnit" ColumnName="PiecesPerStockUnit" />
+          <ScalarProperty Name="ProductClassID" ColumnName="ProductClassID" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="ExternalDocument" ColumnName="ExternalDocument" />
+          <ScalarProperty Name="AlternateUnit" ColumnName="AlternateUnit" />
+          <ScalarProperty Name="AlternateUnitConversionFactor" ColumnName="AlternateUnitConversionFactor" />
+          <ScalarProperty Name="PreferredGUIDVendor" ColumnName="PreferredGUIDVendor" />
+          <ScalarProperty Name="PreferredVendorID" ColumnName="PreferredVendorID" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="ListPriceType" ColumnName="ListPriceType" />
+          <ScalarProperty Name="ListPriceUnit" ColumnName="ListPriceUnit" />
+          <ScalarProperty Name="ListPriceTaxIncluded" ColumnName="ListPriceTaxIncluded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductAltIDs">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.ProductAltID">
+        <MappingFragment StoreEntitySet="ProductAltID">
+          <ScalarProperty Name="GUIDProduct" ColumnName="GUIDProduct" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="AlternateProductID" ColumnName="AlternateProductID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAccesses">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbAccess">
+        <MappingFragment StoreEntitySet="tbAccess">
+          <ScalarProperty Name="GUIDAccess" ColumnName="GUIDAccess" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="EmailSignature" ColumnName="EmailSignature" />
+          <ScalarProperty Name="BCCAddress" ColumnName="BCCAddress" />
+          <ScalarProperty Name="MessageAddr" ColumnName="MessageAddr" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GUIDSalesperson" ColumnName="GUIDSalesperson" />
+          <ScalarProperty Name="AutoOpenAlerts" ColumnName="AutoOpenAlerts" />
+          <ScalarProperty Name="AutoOpenActivities" ColumnName="AutoOpenActivities" />
+          <ScalarProperty Name="AutoOpenSchedule" ColumnName="AutoOpenSchedule" />
+          <ScalarProperty Name="DefaultActivityType" ColumnName="DefaultActivityType" />
+          <ScalarProperty Name="DefaultScheduleClass" ColumnName="DefaultScheduleClass" />
+          <ScalarProperty Name="AutoOpenDashboard" ColumnName="AutoOpenDashboard" />
+          <ScalarProperty Name="AutoOpenOrderManager" ColumnName="AutoOpenOrderManager" />
+          <ScalarProperty Name="RestrictBySalesperson" ColumnName="RestrictBySalesperson" />
+          <ScalarProperty Name="EmailSettingsOverride" ColumnName="EmailSettingsOverride" />
+          <ScalarProperty Name="SMTPServer" ColumnName="SMTPServer" />
+          <ScalarProperty Name="SMTPUserName" ColumnName="SMTPUserName" />
+          <ScalarProperty Name="SMTPPassword" ColumnName="SMTPPassword" />
+          <ScalarProperty Name="EmailType" ColumnName="EmailType" />
+          <ScalarProperty Name="SMTPEncryption" ColumnName="SMTPEncryption" />
+          <ScalarProperty Name="SMTPAuthRequired" ColumnName="SMTPAuthRequired" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAccessPermissions">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbAccessPermission">
+        <MappingFragment StoreEntitySet="tbAccessPermission">
+          <ScalarProperty Name="GUIDAccessPermission" ColumnName="GUIDAccessPermission" />
+          <ScalarProperty Name="GUIDAccess" ColumnName="GUIDAccess" />
+          <ScalarProperty Name="PermissionGroup" ColumnName="PermissionGroup" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="Option" ColumnName="Option" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAccessPermissionGroups">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbAccessPermissionGroup">
+        <MappingFragment StoreEntitySet="tbAccessPermissionGroup">
+          <ScalarProperty Name="PermissionGroup" ColumnName="PermissionGroup" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAccessPermissionMasters">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbAccessPermissionMaster">
+        <MappingFragment StoreEntitySet="tbAccessPermissionMaster">
+          <ScalarProperty Name="PermissionGroup" ColumnName="PermissionGroup" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Options" ColumnName="Options" />
+          <ScalarProperty Name="Default" ColumnName="Default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCustomDataLists">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbCustomDataList">
+        <MappingFragment StoreEntitySet="tbCustomDataList">
+          <ScalarProperty Name="ListID" ColumnName="ListID" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="ListItem" ColumnName="ListItem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCustomFields">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbCustomField">
+        <MappingFragment StoreEntitySet="tbCustomField">
+          <ScalarProperty Name="GUIDCustomField" ColumnName="GUIDCustomField" />
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDocuments">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbDocument">
+        <MappingFragment StoreEntitySet="tbDocument">
+          <ScalarProperty Name="GUIDDocument" ColumnName="GUIDDocument" />
+          <ScalarProperty Name="GUIDLink" ColumnName="GUIDLink" />
+          <ScalarProperty Name="LinkType" ColumnName="LinkType" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="DocumentData" ColumnName="DocumentData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbEmployees">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbEmployee">
+        <MappingFragment StoreEntitySet="tbEmployee">
+          <ScalarProperty Name="GUIDEmployee" ColumnName="GUIDEmployee" />
+          <ScalarProperty Name="EmployeeListID" ColumnName="EmployeeListID" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="PayrollEmployeeID" ColumnName="PayrollEmployeeID" />
+          <ScalarProperty Name="CostRate" ColumnName="CostRate" />
+          <ScalarProperty Name="BillingRate" ColumnName="BillingRate" />
+          <ScalarProperty Name="LaborRate" ColumnName="LaborRate" />
+          <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="HomePhoneNum" ColumnName="HomePhoneNum" />
+          <ScalarProperty Name="EmergPhoneNum" ColumnName="EmergPhoneNum" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbINVLotSerials">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbINVLotSerial">
+        <MappingFragment StoreEntitySet="tbINVLotSerial">
+          <ScalarProperty Name="GUIDINVLotSerial" ColumnName="GUIDINVLotSerial" />
+          <ScalarProperty Name="GUIDProduct" ColumnName="GUIDProduct" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbINVRegisters">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbINVRegister">
+        <MappingFragment StoreEntitySet="tbINVRegister">
+          <ScalarProperty Name="PKIDINVRegister" ColumnName="PKIDINVRegister" />
+          <ScalarProperty Name="GUIDINVRegister" ColumnName="GUIDINVRegister" />
+          <ScalarProperty Name="RegNumber" ColumnName="RegNumber" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="OpenedBy" ColumnName="OpenedBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PostedToINV" ColumnName="PostedToINV" />
+          <ScalarProperty Name="PostedToINVBy" ColumnName="PostedToINVBy" />
+          <ScalarProperty Name="DatePostedToINV" ColumnName="DatePostedToINV" />
+          <ScalarProperty Name="PostedToGL" ColumnName="PostedToGL" />
+          <ScalarProperty Name="PostedToGLBy" ColumnName="PostedToGLBy" />
+          <ScalarProperty Name="DatePostedToGL" ColumnName="DatePostedToGL" />
+          <ScalarProperty Name="PostedToAP" ColumnName="PostedToAP" />
+          <ScalarProperty Name="PostedToAPBy" ColumnName="PostedToAPBy" />
+          <ScalarProperty Name="DatePostedToAP" ColumnName="DatePostedToAP" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="GLTransactionBatch" ColumnName="GLTransactionBatch" />
+          <ScalarProperty Name="TransactionPeriod" ColumnName="TransactionPeriod" />
+          <ScalarProperty Name="TransactionYear" ColumnName="TransactionYear" />
+          <ScalarProperty Name="ParentRegNumber" ColumnName="ParentRegNumber" />
+          <ScalarProperty Name="GUIDLandedCostPODetail" ColumnName="GUIDLandedCostPODetail" />
+          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
+          <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
+          <ScalarProperty Name="GUIDOrder" ColumnName="GUIDOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbINVTransactions">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbINVTransaction">
+        <MappingFragment StoreEntitySet="tbINVTransaction">
+          <ScalarProperty Name="PKIDINVTransaction" ColumnName="PKIDINVTransaction" />
+          <ScalarProperty Name="GUIDINVTransaction" ColumnName="GUIDINVTransaction" />
+          <ScalarProperty Name="RegNumber" ColumnName="RegNumber" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="GUIDWarehouse" ColumnName="GUIDWarehouse" />
+          <ScalarProperty Name="GUIDToWarehouse" ColumnName="GUIDToWarehouse" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="AssemblyType" ColumnName="AssemblyType" />
+          <ScalarProperty Name="VendorInvoiceID" ColumnName="VendorInvoiceID" />
+          <ScalarProperty Name="GLTransactionNumber" ColumnName="GLTransactionNumber" />
+          <ScalarProperty Name="GUIDGLInventoryAccount" ColumnName="GUIDGLInventoryAccount" />
+          <ScalarProperty Name="GUIDGLOffsetAccount" ColumnName="GUIDGLOffsetAccount" />
+          <ScalarProperty Name="PostedToGL" ColumnName="PostedToGL" />
+          <ScalarProperty Name="PostedToAP" ColumnName="PostedToAP" />
+          <ScalarProperty Name="PostedToINV" ColumnName="PostedToINV" />
+          <ScalarProperty Name="GUIDVendor" ColumnName="GUIDVendor" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Document" ColumnName="Document" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="TransactionPeriod" ColumnName="TransactionPeriod" />
+          <ScalarProperty Name="GUIDProductionWorkflowStatus" ColumnName="GUIDProductionWorkflowStatus" />
+          <ScalarProperty Name="TaxIncluded" ColumnName="TaxIncluded" />
+          <ScalarProperty Name="BeginningOfDay" ColumnName="BeginningOfDay" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="GUIDInProgressUser" ColumnName="GUIDInProgressUser" />
+          <ScalarProperty Name="InProgressDate" ColumnName="InProgressDate" />
+          <ScalarProperty Name="GUIDOrderDetail" ColumnName="GUIDOrderDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbINVTransactionDetails">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbINVTransactionDetail">
+        <MappingFragment StoreEntitySet="tbINVTransactionDetail">
+          <ScalarProperty Name="GUIDINVTransactionDetail" ColumnName="GUIDINVTransactionDetail" />
+          <ScalarProperty Name="PKIDINVTransactionDetail" ColumnName="PKIDINVTransactionDetail" />
+          <ScalarProperty Name="RegNumber" ColumnName="RegNumber" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="GUIDProduct" ColumnName="GUIDProduct" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="VendorProductID" ColumnName="VendorProductID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="GUIDINVLotSerial" ColumnName="GUIDINVLotSerial" />
+          <ScalarProperty Name="QuantityOrdered" ColumnName="QuantityOrdered" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ComponentQuantity" ColumnName="ComponentQuantity" />
+          <ScalarProperty Name="AssemblyComponentQuantity" ColumnName="AssemblyComponentQuantity" />
+          <ScalarProperty Name="AssemblyQuantity" ColumnName="AssemblyQuantity" />
+          <ScalarProperty Name="QuantityRejected" ColumnName="QuantityRejected" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DisplayUnit" ColumnName="DisplayUnit" />
+          <ScalarProperty Name="DisplayUnitFactor" ColumnName="DisplayUnitFactor" />
+          <ScalarProperty Name="ValueDiscrepancy" ColumnName="ValueDiscrepancy" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="CostUnit" ColumnName="CostUnit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="FreezeCount" ColumnName="FreezeCount" />
+          <ScalarProperty Name="PhysicalCount" ColumnName="PhysicalCount" />
+          <ScalarProperty Name="CountLineNumber" ColumnName="CountLineNumber" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ToLocation" ColumnName="ToLocation" />
+          <ScalarProperty Name="GUIDWHLocation" ColumnName="GUIDWHLocation" />
+          <ScalarProperty Name="GUIDToWHLocation" ColumnName="GUIDToWHLocation" />
+          <ScalarProperty Name="PostedToINV" ColumnName="PostedToINV" />
+          <ScalarProperty Name="PostedToAP" ColumnName="PostedToAP" />
+          <ScalarProperty Name="PostedToGL" ColumnName="PostedToGL" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="InvoiceLineNumber" ColumnName="InvoiceLineNumber" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="GUIDWarehouse" ColumnName="GUIDWarehouse" />
+          <ScalarProperty Name="CostLayer" ColumnName="CostLayer" />
+          <ScalarProperty Name="PostedTimestamp" ColumnName="PostedTimestamp" />
+          <ScalarProperty Name="TransactionLine" ColumnName="TransactionLine" />
+          <ScalarProperty Name="GLTransactionBatch" ColumnName="GLTransactionBatch" />
+          <ScalarProperty Name="TransactionPeriod" ColumnName="TransactionPeriod" />
+          <ScalarProperty Name="TransactionYear" ColumnName="TransactionYear" />
+          <ScalarProperty Name="GLTransactionLine" ColumnName="GLTransactionLine" />
+          <ScalarProperty Name="AmountPostedToGL" ColumnName="AmountPostedToGL" />
+          <ScalarProperty Name="GUIDJournal" ColumnName="GUIDJournal" />
+          <ScalarProperty Name="GUIDDebitAccount" ColumnName="GUIDDebitAccount" />
+          <ScalarProperty Name="GUIDCreditAccount" ColumnName="GUIDCreditAccount" />
+          <ScalarProperty Name="GUIDInvoiceDetail" ColumnName="GUIDInvoiceDetail" />
+          <ScalarProperty Name="GUIDOrderDetailLot" ColumnName="GUIDOrderDetailLot" />
+          <ScalarProperty Name="GUIDPODetail" ColumnName="GUIDPODetail" />
+          <ScalarProperty Name="PriorPeriodAdjustment" ColumnName="PriorPeriodAdjustment" />
+          <ScalarProperty Name="FromCostMethod" ColumnName="FromCostMethod" />
+          <ScalarProperty Name="ToCostMethod" ColumnName="ToCostMethod" />
+          <ScalarProperty Name="DoNotSync" ColumnName="DoNotSync" />
+          <ScalarProperty Name="GUIDTaxCode" ColumnName="GUIDTaxCode" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="GUIDLayerBatch" ColumnName="GUIDLayerBatch" />
+          <ScalarProperty Name="GUIDAssociatedITD" ColumnName="GUIDAssociatedITD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cvINVTransactionDetailCrystalControls">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.cvINVTransactionDetailCrystalControl">
+        <MappingFragment StoreEntitySet="cvINVTransactionDetailCrystalControl">
+          <ScalarProperty Name="GUIDINVTransactionDetail" ColumnName="GUIDINVTransactionDetail" />
+          <ScalarProperty Name="PKIDINVTransactionDetail" ColumnName="PKIDINVTransactionDetail" />
+          <ScalarProperty Name="RegNumber" ColumnName="RegNumber" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="GUIDProduct" ColumnName="GUIDProduct" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="VendorProductID" ColumnName="VendorProductID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="GUIDINVLotSerial" ColumnName="GUIDINVLotSerial" />
+          <ScalarProperty Name="QuantityOrdered" ColumnName="QuantityOrdered" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ComponentQuantity" ColumnName="ComponentQuantity" />
+          <ScalarProperty Name="AssemblyComponentQuantity" ColumnName="AssemblyComponentQuantity" />
+          <ScalarProperty Name="AssemblyQuantity" ColumnName="AssemblyQuantity" />
+          <ScalarProperty Name="QuantityRejected" ColumnName="QuantityRejected" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DisplayUnit" ColumnName="DisplayUnit" />
+          <ScalarProperty Name="DisplayUnitFactor" ColumnName="DisplayUnitFactor" />
+          <ScalarProperty Name="ValueDiscrepancy" ColumnName="ValueDiscrepancy" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="CostUnit" ColumnName="CostUnit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="FreezeCount" ColumnName="FreezeCount" />
+          <ScalarProperty Name="PhysicalCount" ColumnName="PhysicalCount" />
+          <ScalarProperty Name="CountLineNumber" ColumnName="CountLineNumber" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ToLocation" ColumnName="ToLocation" />
+          <ScalarProperty Name="GUIDWHLocation" ColumnName="GUIDWHLocation" />
+          <ScalarProperty Name="GUIDToWHLocation" ColumnName="GUIDToWHLocation" />
+          <ScalarProperty Name="PostedToINV" ColumnName="PostedToINV" />
+          <ScalarProperty Name="PostedToAP" ColumnName="PostedToAP" />
+          <ScalarProperty Name="PostedToGL" ColumnName="PostedToGL" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="InvoiceLineNumber" ColumnName="InvoiceLineNumber" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="GUIDWarehouse" ColumnName="GUIDWarehouse" />
+          <ScalarProperty Name="CostLayer" ColumnName="CostLayer" />
+          <ScalarProperty Name="PostedTimestamp" ColumnName="PostedTimestamp" />
+          <ScalarProperty Name="TransactionLine" ColumnName="TransactionLine" />
+          <ScalarProperty Name="GLTransactionBatch" ColumnName="GLTransactionBatch" />
+          <ScalarProperty Name="TransactionPeriod" ColumnName="TransactionPeriod" />
+          <ScalarProperty Name="TransactionYear" ColumnName="TransactionYear" />
+          <ScalarProperty Name="GLTransactionLine" ColumnName="GLTransactionLine" />
+          <ScalarProperty Name="AmountPostedToGL" ColumnName="AmountPostedToGL" />
+          <ScalarProperty Name="GUIDJournal" ColumnName="GUIDJournal" />
+          <ScalarProperty Name="GUIDDebitAccount" ColumnName="GUIDDebitAccount" />
+          <ScalarProperty Name="GUIDCreditAccount" ColumnName="GUIDCreditAccount" />
+          <ScalarProperty Name="GUIDInvoiceDetail" ColumnName="GUIDInvoiceDetail" />
+          <ScalarProperty Name="GUIDOrderDetailLot" ColumnName="GUIDOrderDetailLot" />
+          <ScalarProperty Name="GUIDPODetail" ColumnName="GUIDPODetail" />
+          <ScalarProperty Name="PriorPeriodAdjustment" ColumnName="PriorPeriodAdjustment" />
+          <ScalarProperty Name="FromCostMethod" ColumnName="FromCostMethod" />
+          <ScalarProperty Name="ToCostMethod" ColumnName="ToCostMethod" />
+          <ScalarProperty Name="DoNotSync" ColumnName="DoNotSync" />
+          <ScalarProperty Name="GUIDTaxCode" ColumnName="GUIDTaxCode" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="GUIDLayerBatch" ColumnName="GUIDLayerBatch" />
+          <ScalarProperty Name="GUIDAssociatedITD" ColumnName="GUIDAssociatedITD" />
+          <ScalarProperty Name="FProductCategory" ColumnName="FProductCategory" />
+          <ScalarProperty Name="VariableQuantity" ColumnName="VariableQuantity" />
+          <ScalarProperty Name="FSignature" ColumnName="FSignature" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNumbers">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbNumber">
+        <MappingFragment StoreEntitySet="tbNumbers">
+          <ScalarProperty Name="NumberType" ColumnName="NumberType" />
+          <ScalarProperty Name="NextNumber" ColumnName="NextNumber" />
+          <ScalarProperty Name="LowNumber" ColumnName="LowNumber" />
+          <ScalarProperty Name="HighNumber" ColumnName="HighNumber" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="NoWrap" ColumnName="NoWrap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProducts">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProduct">
+        <MappingFragment StoreEntitySet="tbProduct">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Taxable" ColumnName="Taxable" />
+          <ScalarProperty Name="SalesGUIDTaxCode" ColumnName="SalesGUIDTaxCode" />
+          <ScalarProperty Name="PurchaseGUIDTaxCode" ColumnName="PurchaseGUIDTaxCode" />
+          <ScalarProperty Name="TaxByCategory" ColumnName="TaxByCategory" />
+          <ScalarProperty Name="GUIDTaxCategory" ColumnName="GUIDTaxCategory" />
+          <ScalarProperty Name="TaxInPrice" ColumnName="TaxInPrice" />
+          <ScalarProperty Name="AllowOverride" ColumnName="AllowOverride" />
+          <ScalarProperty Name="AllowZero" ColumnName="AllowZero" />
+          <ScalarProperty Name="CommissionType" ColumnName="CommissionType" />
+          <ScalarProperty Name="CommPct" ColumnName="CommPct" />
+          <ScalarProperty Name="CommAmt" ColumnName="CommAmt" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="VariableWeight" ColumnName="VariableWeight" />
+          <ScalarProperty Name="VariableLength" ColumnName="VariableLength" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="ProductPriceCategory" ColumnName="ProductPriceCategory" />
+          <ScalarProperty Name="PriceByCategory" ColumnName="PriceByCategory" />
+          <ScalarProperty Name="GUIDProductClass" ColumnName="GUIDProductClass" />
+          <ScalarProperty Name="LeadTime" ColumnName="LeadTime" />
+          <ScalarProperty Name="SalesCategory" ColumnName="SalesCategory" />
+          <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+          <ScalarProperty Name="CostMethod" ColumnName="CostMethod" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="InventoryControlType" ColumnName="InventoryControlType" />
+          <ScalarProperty Name="AssemblyType" ColumnName="AssemblyType" />
+          <ScalarProperty Name="CountCycle" ColumnName="CountCycle" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Popup" ColumnName="Popup" />
+          <ScalarProperty Name="PONote" ColumnName="PONote" />
+          <ScalarProperty Name="POPopup" ColumnName="POPopup" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="VariableHeight" ColumnName="VariableHeight" />
+          <ScalarProperty Name="VariableVolume" ColumnName="VariableVolume" />
+          <ScalarProperty Name="VariableWidth" ColumnName="VariableWidth" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="TechSpec" ColumnName="TechSpec" />
+          <ScalarProperty Name="WebAddress" ColumnName="WebAddress" />
+          <ScalarProperty Name="AltDescription" ColumnName="AltDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="GUIDProduct" ColumnName="GUIDProduct" />
+          <ScalarProperty Name="NotForResale" ColumnName="NotForResale" />
+          <ScalarProperty Name="MaintainInventoryType" ColumnName="MaintainInventoryType" />
+          <ScalarProperty Name="AvailOnWeb" ColumnName="AvailOnWeb" />
+          <ScalarProperty Name="ProductPicture" ColumnName="ProductPicture" />
+          <ScalarProperty Name="ShipCompleteLots" ColumnName="ShipCompleteLots" />
+          <ScalarProperty Name="AltWeight" ColumnName="AltWeight" />
+          <ScalarProperty Name="AltLength" ColumnName="AltLength" />
+          <ScalarProperty Name="AltHeight" ColumnName="AltHeight" />
+          <ScalarProperty Name="AltWidth" ColumnName="AltWidth" />
+          <ScalarProperty Name="AltVolume" ColumnName="AltVolume" />
+          <ScalarProperty Name="AltUnitsPerPalletLayer" ColumnName="AltUnitsPerPalletLayer" />
+          <ScalarProperty Name="PalletLayers" ColumnName="PalletLayers" />
+          <ScalarProperty Name="InnerPackQty" ColumnName="InnerPackQty" />
+          <ScalarProperty Name="OuterPackQty" ColumnName="OuterPackQty" />
+          <ScalarProperty Name="Discountable" ColumnName="Discountable" />
+          <ScalarProperty Name="SalesUnit" ColumnName="SalesUnit" />
+          <ScalarProperty Name="PurchaseUnit" ColumnName="PurchaseUnit" />
+          <ScalarProperty Name="PackageUnit" ColumnName="PackageUnit" />
+          <ScalarProperty Name="LandedCostFactor" ColumnName="LandedCostFactor" />
+          <ScalarProperty Name="C_ControlGroup" ColumnName="_ControlGroup" />
+          <ScalarProperty Name="C_ControlDataType" ColumnName="_ControlDataType" />
+          <ScalarProperty Name="C_ControlMethod" ColumnName="_ControlMethod" />
+          <ScalarProperty Name="C_ControlSpec" ColumnName="_ControlSpec" />
+          <ScalarProperty Name="C_ControlMin" ColumnName="_ControlMin" />
+          <ScalarProperty Name="C_ControlMax" ColumnName="_ControlMax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductClasses">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProductClass">
+        <MappingFragment StoreEntitySet="tbProductClass">
+          <ScalarProperty Name="GUIDProductClass" ColumnName="GUIDProductClass" />
+          <ScalarProperty Name="ItemListID" ColumnName="ItemListID" />
+          <ScalarProperty Name="ProductClassID" ColumnName="ProductClassID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="GUIDSalesAccount" ColumnName="GUIDSalesAccount" />
+          <ScalarProperty Name="GUIDReturnsAccount" ColumnName="GUIDReturnsAccount" />
+          <ScalarProperty Name="GUIDTradeDiscountAccount" ColumnName="GUIDTradeDiscountAccount" />
+          <ScalarProperty Name="GUIDCGSAccount" ColumnName="GUIDCGSAccount" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GUIDCGSAdjAccount" ColumnName="GUIDCGSAdjAccount" />
+          <ScalarProperty Name="GUIDClass" ColumnName="GUIDClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductComponents">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProductComponent">
+        <MappingFragment StoreEntitySet="tbProductComponent">
+          <ScalarProperty Name="GUIDProductComponent" ColumnName="GUIDProductComponent" />
+          <ScalarProperty Name="GUIDProduct" ColumnName="GUIDProduct" />
+          <ScalarProperty Name="ComponentType" ColumnName="ComponentType" />
+          <ScalarProperty Name="ComponentGUIDProduct" ColumnName="ComponentGUIDProduct" />
+          <ScalarProperty Name="GUIDComponentWarehouse" ColumnName="GUIDComponentWarehouse" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="VariableQuantity" ColumnName="VariableQuantity" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductControlTypes">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProductControlType">
+        <MappingFragment StoreEntitySet="tbProductControlType">
+          <ScalarProperty Name="InventoryControlType" ColumnName="InventoryControlType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductCostMethods">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProductCostMethod">
+        <MappingFragment StoreEntitySet="tbProductCostMethod">
+          <ScalarProperty Name="CostMethod" ColumnName="CostMethod" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LotSerialNumbered" ColumnName="LotSerialNumbered" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductionWorkflowStatus">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProductionWorkflowStatu">
+        <MappingFragment StoreEntitySet="tbProductionWorkflowStatus">
+          <ScalarProperty Name="GUIDProductionWorkflowStatus" ColumnName="GUIDProductionWorkflowStatus" />
+          <ScalarProperty Name="ProductionWorkFlowStatus" ColumnName="ProductionWorkFlowStatus" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductSalesCategories">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProductSalesCategory">
+        <MappingFragment StoreEntitySet="tbProductSalesCategory">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SalesCategory" ColumnName="SalesCategory" />
+          <ScalarProperty Name="GUIDSalesAccount" ColumnName="GUIDSalesAccount" />
+          <ScalarProperty Name="GUIDReturnsAccount" ColumnName="GUIDReturnsAccount" />
+          <ScalarProperty Name="GUIDTradeDiscount" ColumnName="GUIDTradeDiscount" />
+          <ScalarProperty Name="GUIDCOGSAccount" ColumnName="GUIDCOGSAccount" />
+          <ScalarProperty Name="GUIDClass" ColumnName="GUIDClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductTypes">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProductType">
+        <MappingFragment StoreEntitySet="tbProductType">
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProductUnits">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbProductUnit">
+        <MappingFragment StoreEntitySet="tbProductUnit">
+          <ScalarProperty Name="BaseUnit" ColumnName="BaseUnit" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="FactorBasis" ColumnName="FactorBasis" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Discrete" ColumnName="Discrete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSalespersonInfoes">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbSalespersonInfo">
+        <MappingFragment StoreEntitySet="tbSalespersonInfo">
+          <ScalarProperty Name="GUIDSalesperson" ColumnName="GUIDSalesperson" />
+          <ScalarProperty Name="SalespersonListID" ColumnName="SalespersonListID" />
+          <ScalarProperty Name="SalespersonID" ColumnName="SalespersonID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LinkType" ColumnName="LinkType" />
+          <ScalarProperty Name="GUIDLink" ColumnName="GUIDLink" />
+          <ScalarProperty Name="GUIDSalesAccount" ColumnName="GUIDSalesAccount" />
+          <ScalarProperty Name="GUIDReturnsAccount" ColumnName="GUIDReturnsAccount" />
+          <ScalarProperty Name="GUIDTradeDiscount" ColumnName="GUIDTradeDiscount" />
+          <ScalarProperty Name="GUIDCOGSAccount" ColumnName="GUIDCOGSAccount" />
+          <ScalarProperty Name="GUIDClass" ColumnName="GUIDClass" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="TimeModified" ColumnName="TimeModified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSystems">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbSystem">
+        <MappingFragment StoreEntitySet="tbSystem">
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="WebAddress" ColumnName="WebAddress" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="DBVersion" ColumnName="DBVersion" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="EIN" ColumnName="EIN" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="FirstMonthFiscalYear" ColumnName="FirstMonthFiscalYear" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="SMTPServer" ColumnName="SMTPServer" />
+          <ScalarProperty Name="SMTPUserName" ColumnName="SMTPUserName" />
+          <ScalarProperty Name="SMTPPassword" ColumnName="SMTPPassword" />
+          <ScalarProperty Name="EmailType" ColumnName="EmailType" />
+          <ScalarProperty Name="SMTPEncryption" ColumnName="SMTPEncryption" />
+          <ScalarProperty Name="SMTPAuthRequired" ColumnName="SMTPAuthRequired" />
+          <ScalarProperty Name="QBMSConnectionTicket" ColumnName="QBMSConnectionTicket" />
+          <ScalarProperty Name="QuickBooksCountry" ColumnName="QuickBooksCountry" />
+          <ScalarProperty Name="DemoBaseDate" ColumnName="DemoBaseDate" />
+          <ScalarProperty Name="MetricsLastSentDate" ColumnName="MetricsLastSentDate" />
+          <ScalarProperty Name="GUIDHomeCurrency" ColumnName="GUIDHomeCurrency" />
+          <ScalarProperty Name="GUIHexColor" ColumnName="GUIHexColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSystemOptions">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbSystemOption">
+        <MappingFragment StoreEntitySet="tbSystemOption">
+          <ScalarProperty Name="OptionGroup" ColumnName="OptionGroup" />
+          <ScalarProperty Name="Option" ColumnName="Option" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbWarehouses">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbWarehouse">
+        <MappingFragment StoreEntitySet="tbWarehouse">
+          <ScalarProperty Name="GUIDWarehouse" ColumnName="GUIDWarehouse" />
+          <ScalarProperty Name="WarehouseID" ColumnName="WarehouseID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AssociatedGUIDBranch" ColumnName="AssociatedGUIDBranch" />
+          <ScalarProperty Name="GUIDInventoryAccount" ColumnName="GUIDInventoryAccount" />
+          <ScalarProperty Name="GUIDPurchaseAccount" ColumnName="GUIDPurchaseAccount" />
+          <ScalarProperty Name="GUIDAdjustmentAccount" ColumnName="GUIDAdjustmentAccount" />
+          <ScalarProperty Name="GUIDAssemblyLaborAccount" ColumnName="GUIDAssemblyLaborAccount" />
+          <ScalarProperty Name="GUIDAssemblyOtherCostAccount" ColumnName="GUIDAssemblyOtherCostAccount" />
+          <ScalarProperty Name="GUIDIssueAccount" ColumnName="GUIDIssueAccount" />
+          <ScalarProperty Name="GUIDNonInvOffsetAccount" ColumnName="GUIDNonInvOffsetAccount" />
+          <ScalarProperty Name="GUIDLaborOffsetAccount" ColumnName="GUIDLaborOffsetAccount" />
+          <ScalarProperty Name="GUIDOtherChargeOffsetAccount" ColumnName="GUIDOtherChargeOffsetAccount" />
+          <ScalarProperty Name="GUIDShippingOffsetAccount" ColumnName="GUIDShippingOffsetAccount" />
+          <ScalarProperty Name="GUIDLandedCostOffsetAccount" ColumnName="GUIDLandedCostOffsetAccount" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShipToAttentionOf" ColumnName="ShipToAttentionOf" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+          <ScalarProperty Name="FOB" ColumnName="FOB" />
+          <ScalarProperty Name="MaintainInventory" ColumnName="MaintainInventory" />
+          <ScalarProperty Name="LaborCost" ColumnName="LaborCost" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="GUIDGainLossAccount" ColumnName="GUIDGainLossAccount" />
+          <ScalarProperty Name="GUIDPartner" ColumnName="GUIDPartner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbWHLocations">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbWHLocation">
+        <MappingFragment StoreEntitySet="tbWHLocation">
+          <ScalarProperty Name="GUIDWHLocation" ColumnName="GUIDWHLocation" />
+          <ScalarProperty Name="GUIDWarehouse" ColumnName="GUIDWarehouse" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Zone" ColumnName="Zone" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbWorkFlowStatus">
+      <EntityTypeMapping TypeName="CerinimbusDevModel.tbWorkFlowStatu">
+        <MappingFragment StoreEntitySet="tbWorkFlowStatus">
+          <ScalarProperty Name="WorkFlowStatus" ColumnName="WorkFlowStatus" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

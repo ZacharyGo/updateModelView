@@ -1,0 +1,1751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CerinimbusDevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.cvAssemblyOrdersUnlinked' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="cvAssemblyOrdersUnlinked">
+    <Key>
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="parent" />
+      <PropertyRef Name="NumSiblings" />
+    </Key>
+    <Property Name="Session" Type="int" />
+    <Property Name="TransactionNumber" Type="int" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="Reference" Type="varchar" MaxLength="20" />
+    <Property Name="Document" Type="varchar" MaxLength="15" />
+    <Property Name="DocumentNum" Type="int" />
+    <Property Name="DocumentDate" Type="datetime" />
+    <Property Name="DocumentType" Type="varchar" MaxLength="1" />
+    <Property Name="AODescription" Type="varchar" MaxLength="50" />
+    <Property Name="ProductionWorkflowStatus" Type="varchar" MaxLength="50" />
+    <Property Name="AOQuantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="FProductID" Type="varchar" MaxLength="159" />
+    <Property Name="FProductType" Type="varchar" MaxLength="8" />
+    <Property Name="FProductRowType" Type="varchar" MaxLength="60" />
+    <Property Name="FProductCategory" Type="varchar" MaxLength="60" />
+    <Property Name="FProductSalesCategory" Type="varchar" MaxLength="8" />
+    <Property Name="AlternateProductID" Type="varchar" MaxLength="159" />
+    <Property Name="UPC" Type="varchar" MaxLength="159" />
+    <Property Name="FProductDescription" Type="varchar" MaxLength="4095" />
+    <Property Name="LotNumber" Type="varchar" MaxLength="40" />
+    <Property Name="WarehouseID" Type="varchar" MaxLength="6" />
+    <Property Name="WarehouseName" Type="varchar" MaxLength="50" />
+    <Property Name="PostedToGL" Type="bit" Nullable="false" />
+    <Property Name="PostedToINV" Type="bit" Nullable="false" />
+    <Property Name="parent" Type="int" Nullable="false" />
+    <Property Name="NumSiblings" Type="int" Nullable="false" />
+    <Property Name="NumTransactions" Type="int" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="59" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="TaxByCategory" />
+      <PropertyRef Name="TaxInPrice" />
+      <PropertyRef Name="AllowOverride" />
+      <PropertyRef Name="AllowZero" />
+      <PropertyRef Name="VariableWeight" />
+      <PropertyRef Name="VariableLength" />
+      <PropertyRef Name="PriceByCategory" />
+      <PropertyRef Name="Discontinued" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="Popup" />
+      <PropertyRef Name="POPopup" />
+      <PropertyRef Name="VariableHeight" />
+      <PropertyRef Name="VariableVolume" />
+      <PropertyRef Name="VariableWidth" />
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="NotForResale" />
+      <PropertyRef Name="MaintainInventoryType" />
+      <PropertyRef Name="AvailOnWeb" />
+      <PropertyRef Name="ShipCompleteLots" />
+      <PropertyRef Name="Discountable" />
+    </Key>
+    <Property Name="ProductID" Type="varchar" MaxLength="159" Nullable="false" />
+    <Property Name="SalesGUIDTaxCode" Type="uniqueidentifier" />
+    <Property Name="PurchaseGUIDTaxCode" Type="uniqueidentifier" />
+    <Property Name="TaxByCategory" Type="bit" Nullable="false" />
+    <Property Name="GUIDTaxCategory" Type="uniqueidentifier" />
+    <Property Name="TaxInPrice" Type="bit" Nullable="false" />
+    <Property Name="AllowOverride" Type="bit" Nullable="false" />
+    <Property Name="AllowZero" Type="bit" Nullable="false" />
+    <Property Name="CommissionType" Type="smallint" />
+    <Property Name="CommPct" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="CommAmt" Type="money" />
+    <Property Name="Unit" Type="varchar" MaxLength="5" />
+    <Property Name="Weight" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Length" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="VariableWeight" Type="bit" Nullable="false" />
+    <Property Name="VariableLength" Type="bit" Nullable="false" />
+    <Property Name="Specification" Type="varchar" MaxLength="80" />
+    <Property Name="ProductPriceCategory" Type="varchar" MaxLength="25" />
+    <Property Name="PriceByCategory" Type="bit" Nullable="false" />
+    <Property Name="GUIDProductClass" Type="uniqueidentifier" />
+    <Property Name="LeadTime" Type="int" />
+    <Property Name="SalesCategory" Type="varchar" MaxLength="8" />
+    <Property Name="Discontinued" Type="bit" Nullable="false" />
+    <Property Name="CostMethod" Type="varchar" MaxLength="1" />
+    <Property Name="ProductType" Type="varchar" MaxLength="8" />
+    <Property Name="InventoryControlType" Type="varchar" MaxLength="1" />
+    <Property Name="AssemblyType" Type="varchar" MaxLength="1" />
+    <Property Name="CountCycle" Type="varchar" MaxLength="5" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="3" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="3" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="Note" Type="text" />
+    <Property Name="Popup" Type="bit" Nullable="false" />
+    <Property Name="PONote" Type="text" />
+    <Property Name="POPopup" Type="bit" Nullable="false" />
+    <Property Name="Color" Type="varchar" MaxLength="25" />
+    <Property Name="Height" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Size" Type="varchar" MaxLength="25" />
+    <Property Name="VariableHeight" Type="bit" Nullable="false" />
+    <Property Name="VariableVolume" Type="bit" Nullable="false" />
+    <Property Name="VariableWidth" Type="bit" Nullable="false" />
+    <Property Name="Volume" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Width" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="TechSpec" Type="text" />
+    <Property Name="WebAddress" Type="text" />
+    <Property Name="AltDescription" Type="varchar" MaxLength="4095" />
+    <Property Name="Description" Type="varchar" MaxLength="4095" />
+    <Property Name="GUIDProduct" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NotForResale" Type="bit" Nullable="false" />
+    <Property Name="MaintainInventoryType" Type="int" Nullable="false" />
+    <Property Name="AvailOnWeb" Type="bit" Nullable="false" />
+    <Property Name="ProductPicture" Type="image" />
+    <Property Name="ShipCompleteLots" Type="bit" Nullable="false" />
+    <Property Name="AltWeight" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltLength" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltHeight" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltWidth" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltVolume" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltUnitsPerPalletLayer" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="PalletLayers" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="InnerPackQty" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="OuterPackQty" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Discountable" Type="bit" Nullable="false" />
+    <Property Name="SalesUnit" Type="varchar" MaxLength="5" />
+    <Property Name="PurchaseUnit" Type="varchar" MaxLength="5" />
+    <Property Name="PackageUnit" Type="varchar" MaxLength="5" />
+    <Property Name="LandedCostFactor" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="_ControlGroup" Type="varchar" MaxLength="20" />
+    <Property Name="_ControlDataType" Type="varchar" MaxLength="20" />
+    <Property Name="_ControlMethod" Type="varchar" MaxLength="60" />
+    <Property Name="_ControlSpec" Type="varchar" MaxLength="500" />
+    <Property Name="_ControlMin" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="_ControlMax" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AlternateProductID" Type="varchar" MaxLength="159" />
+    <Property Name="UPC" Type="varchar" MaxLength="159" />
+    <Property Name="ShortDescription" Type="varchar(max)" />
+    <Property Name="PiecesPerStockUnit" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="ProductClassID" Type="varchar" MaxLength="8" />
+    <Property Name="ItemType" Type="varchar" MaxLength="18" />
+    <Property Name="Keywords" Type="varchar" MaxLength="80" />
+    <Property Name="ExternalDocument" Type="text" />
+    <Property Name="AlternateUnit" Type="varchar" MaxLength="5" />
+    <Property Name="AlternateUnitConversionFactor" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="PreferredGUIDVendor" Type="uniqueidentifier" />
+    <Property Name="PreferredVendorID" Type="varchar" MaxLength="41" />
+    <Property Name="ListPrice" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="ListPriceType" Type="varchar" MaxLength="2" />
+    <Property Name="ListPriceUnit" Type="varchar" MaxLength="5" />
+    <Property Name="ListPriceTaxIncluded" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.ProductAltID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductAltID">
+    <Key>
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="GUIDProduct" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductID" Type="varchar" MaxLength="159" Nullable="false" />
+    <Property Name="AlternateProductID" Type="varchar" MaxLength="159" />
+    <Property Name="Description" Type="varchar" MaxLength="4095" />
+    <Property Name="UPC" Type="varchar" MaxLength="159" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbAccess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbAccess">
+    <Key>
+      <PropertyRef Name="GUIDAccess" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="AutoOpenAlerts" />
+      <PropertyRef Name="AutoOpenActivities" />
+      <PropertyRef Name="AutoOpenSchedule" />
+      <PropertyRef Name="AutoOpenDashboard" />
+      <PropertyRef Name="AutoOpenOrderManager" />
+      <PropertyRef Name="RestrictBySalesperson" />
+      <PropertyRef Name="EmailSettingsOverride" />
+      <PropertyRef Name="SMTPEncryption" />
+      <PropertyRef Name="SMTPAuthRequired" />
+    </Key>
+    <Property Name="GUIDAccess" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ID" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="69" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="EMail" Type="varchar" MaxLength="99" />
+    <Property Name="EmailSignature" Type="varchar" MaxLength="255" />
+    <Property Name="BCCAddress" Type="varchar" MaxLength="99" />
+    <Property Name="MessageAddr" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="GUIDSalesperson" Type="uniqueidentifier" />
+    <Property Name="AutoOpenAlerts" Type="bit" Nullable="false" />
+    <Property Name="AutoOpenActivities" Type="bit" Nullable="false" />
+    <Property Name="AutoOpenSchedule" Type="bit" Nullable="false" />
+    <Property Name="DefaultActivityType" Type="varchar" MaxLength="3" />
+    <Property Name="DefaultScheduleClass" Type="varchar" MaxLength="3" />
+    <Property Name="AutoOpenDashboard" Type="bit" Nullable="false" />
+    <Property Name="AutoOpenOrderManager" Type="bit" Nullable="false" />
+    <Property Name="RestrictBySalesperson" Type="bit" Nullable="false" />
+    <Property Name="EmailSettingsOverride" Type="bit" Nullable="false" />
+    <Property Name="SMTPServer" Type="varchar" MaxLength="50" />
+    <Property Name="SMTPUserName" Type="varchar" MaxLength="50" />
+    <Property Name="SMTPPassword" Type="varchar" MaxLength="50" />
+    <Property Name="EmailType" Type="int" />
+    <Property Name="SMTPEncryption" Type="int" Nullable="false" />
+    <Property Name="SMTPAuthRequired" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbAccessPermission' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbAccessPermission">
+    <Key>
+      <PropertyRef Name="GUIDAccessPermission" />
+      <PropertyRef Name="GUIDAccess" />
+      <PropertyRef Name="PermissionGroup" />
+      <PropertyRef Name="Permission" />
+      <PropertyRef Name="Option" />
+    </Key>
+    <Property Name="GUIDAccessPermission" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GUIDAccess" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PermissionGroup" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Permission" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Option" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbAccessPermissionGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbAccessPermissionGroup">
+    <Key>
+      <PropertyRef Name="PermissionGroup" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="PermissionGroup" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbAccessPermissionMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbAccessPermissionMaster">
+    <Key>
+      <PropertyRef Name="PermissionGroup" />
+      <PropertyRef Name="Permission" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="Options" />
+      <PropertyRef Name="Default" />
+    </Key>
+    <Property Name="PermissionGroup" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Permission" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Options" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Default" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbCustomDataList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbCustomDataList">
+    <Key>
+      <PropertyRef Name="ListID" />
+      <PropertyRef Name="Sequence" />
+      <PropertyRef Name="ListItem" />
+    </Key>
+    <Property Name="ListID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="ListItem" Type="varchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbCustomField' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbCustomField">
+    <Key>
+      <PropertyRef Name="GUIDCustomField" />
+      <PropertyRef Name="TableID" />
+      <PropertyRef Name="TableName" />
+      <PropertyRef Name="Sequence" />
+      <PropertyRef Name="Label" />
+      <PropertyRef Name="FieldName" />
+      <PropertyRef Name="FieldType" />
+      <PropertyRef Name="Extra" />
+    </Key>
+    <Property Name="GUIDCustomField" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TableID" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="TableName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="Label" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="FieldName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FieldType" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Extra" Type="text" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbDocument' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbDocument">
+    <Key>
+      <PropertyRef Name="GUIDDocument" />
+    </Key>
+    <Property Name="GUIDDocument" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GUIDLink" Type="uniqueidentifier" />
+    <Property Name="LinkType" Type="varchar" MaxLength="1" />
+    <Property Name="FileName" Type="varchar" MaxLength="255" />
+    <Property Name="FileExtension" Type="varchar" MaxLength="255" />
+    <Property Name="FileSize" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Note" Type="text" />
+    <Property Name="DateAdded" Type="datetime" />
+    <Property Name="AddedBy" Type="varchar" MaxLength="3" />
+    <Property Name="DocumentData" Type="image" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbEmployee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbEmployee">
+    <Key>
+      <PropertyRef Name="GUIDEmployee" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="GUIDEmployee" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeListID" Type="varchar" MaxLength="20" />
+    <Property Name="EmployeeId" Type="varchar" MaxLength="41" />
+    <Property Name="PayrollEmployeeID" Type="varchar" MaxLength="20" />
+    <Property Name="CostRate" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="BillingRate" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="LaborRate" Type="varchar" MaxLength="15" />
+    <Property Name="Salutation" Type="varchar" MaxLength="15" />
+    <Property Name="FirstName" Type="varchar" MaxLength="25" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="5" />
+    <Property Name="LastName" Type="varchar" MaxLength="25" />
+    <Property Name="Address1" Type="varchar" MaxLength="41" />
+    <Property Name="Address2" Type="varchar" MaxLength="41" />
+    <Property Name="Address3" Type="varchar" MaxLength="41" />
+    <Property Name="Address4" Type="varchar" MaxLength="41" />
+    <Property Name="City" Type="varchar" MaxLength="31" />
+    <Property Name="State" Type="varchar" MaxLength="21" />
+    <Property Name="Zip" Type="varchar" MaxLength="13" />
+    <Property Name="Country" Type="varchar" MaxLength="31" />
+    <Property Name="HomePhoneNum" Type="varchar" MaxLength="21" />
+    <Property Name="EmergPhoneNum" Type="varchar" MaxLength="21" />
+    <Property Name="EMail" Type="varchar" MaxLength="99" />
+    <Property Name="JobTitle" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="6" />
+    <Property Name="LocationID" Type="varchar" MaxLength="41" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbINVLotSerial' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbINVLotSerial">
+    <Key>
+      <PropertyRef Name="GUIDINVLotSerial" />
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="Number" />
+    </Key>
+    <Property Name="GUIDINVLotSerial" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GUIDProduct" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Number" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ExpirationDate" Type="datetime" />
+    <Property Name="Reference" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="80" />
+    <Property Name="Specification" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbINVRegister' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbINVRegister">
+    <Key>
+      <PropertyRef Name="PKIDINVRegister" />
+      <PropertyRef Name="GUIDINVRegister" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PostedToAP" />
+    </Key>
+    <Property Name="PKIDINVRegister" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUIDINVRegister" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RegNumber" Type="int" />
+    <Property Name="RegDate" Type="datetime" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="Source" Type="varchar" MaxLength="1" />
+    <Property Name="OpenedBy" Type="varchar" MaxLength="8" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="PostedToINV" Type="bit" Nullable="false" />
+    <Property Name="PostedToINVBy" Type="varchar" MaxLength="8" />
+    <Property Name="DatePostedToINV" Type="datetime" />
+    <Property Name="PostedToGL" Type="bit" Nullable="false" />
+    <Property Name="PostedToGLBy" Type="varchar" MaxLength="8" />
+    <Property Name="DatePostedToGL" Type="datetime" />
+    <Property Name="PostedToAP" Type="bit" Nullable="false" />
+    <Property Name="PostedToAPBy" Type="varchar" MaxLength="8" />
+    <Property Name="DatePostedToAP" Type="datetime" />
+    <Property Name="Note" Type="text" />
+    <Property Name="GLTransactionBatch" Type="int" />
+    <Property Name="TransactionPeriod" Type="smallint" />
+    <Property Name="TransactionYear" Type="smallint" />
+    <Property Name="ParentRegNumber" Type="int" />
+    <Property Name="GUIDLandedCostPODetail" Type="uniqueidentifier" />
+    <Property Name="VoidedDate" Type="datetime" />
+    <Property Name="VoidedBy" Type="varchar" MaxLength="8" />
+    <Property Name="GUIDOrder" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbINVTransaction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbINVTransaction">
+    <Key>
+      <PropertyRef Name="PKIDINVTransaction" />
+      <PropertyRef Name="GUIDINVTransaction" />
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PostedToAP" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="ExchangeRate" />
+      <PropertyRef Name="TaxIncluded" />
+      <PropertyRef Name="BeginningOfDay" />
+    </Key>
+    <Property Name="PKIDINVTransaction" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUIDINVTransaction" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RegNumber" Type="int" />
+    <Property Name="TransactionNumber" Type="int" />
+    <Property Name="GUIDWarehouse" Type="uniqueidentifier" />
+    <Property Name="GUIDToWarehouse" Type="uniqueidentifier" />
+    <Property Name="DocumentType" Type="varchar" MaxLength="1" />
+    <Property Name="DocumentDate" Type="datetime" />
+    <Property Name="AssemblyType" Type="char" MaxLength="1" />
+    <Property Name="VendorInvoiceID" Type="varchar" MaxLength="15" />
+    <Property Name="GLTransactionNumber" Type="int" />
+    <Property Name="GUIDGLInventoryAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDGLOffsetAccount" Type="uniqueidentifier" />
+    <Property Name="PostedToGL" Type="bit" Nullable="false" />
+    <Property Name="PostedToAP" Type="bit" Nullable="false" />
+    <Property Name="PostedToINV" Type="bit" Nullable="false" />
+    <Property Name="GUIDVendor" Type="uniqueidentifier" />
+    <Property Name="VendorName" Type="varchar" MaxLength="50" />
+    <Property Name="PONumber" Type="varchar" MaxLength="40" />
+    <Property Name="ExchangeRate" Type="decimal" Precision="19" Scale="7" Nullable="false" />
+    <Property Name="Reference" Type="varchar" MaxLength="20" />
+    <Property Name="Document" Type="varchar" MaxLength="15" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="text" />
+    <Property Name="TransactionPeriod" Type="int" />
+    <Property Name="GUIDProductionWorkflowStatus" Type="uniqueidentifier" />
+    <Property Name="TaxIncluded" Type="bit" Nullable="false" />
+    <Property Name="BeginningOfDay" Type="bit" Nullable="false" />
+    <Property Name="InvoiceAmount" Type="money" />
+    <Property Name="SalesTax" Type="money" />
+    <Property Name="GUIDInProgressUser" Type="uniqueidentifier" />
+    <Property Name="InProgressDate" Type="datetime" />
+    <Property Name="GUIDOrderDetail" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbINVTransactionDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbINVTransactionDetail">
+    <Key>
+      <PropertyRef Name="GUIDINVTransactionDetail" />
+      <PropertyRef Name="PKIDINVTransactionDetail" />
+      <PropertyRef Name="TransactionType" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="PostedToAP" />
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PriorPeriodAdjustment" />
+      <PropertyRef Name="DoNotSync" />
+    </Key>
+    <Property Name="GUIDINVTransactionDetail" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PKIDINVTransactionDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegNumber" Type="int" />
+    <Property Name="TransactionNumber" Type="int" />
+    <Property Name="TransactionType" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="PONumber" Type="varchar" MaxLength="40" />
+    <Property Name="GUIDProduct" Type="uniqueidentifier" />
+    <Property Name="ProductID" Type="varchar" MaxLength="159" />
+    <Property Name="VendorProductID" Type="varchar" MaxLength="25" />
+    <Property Name="Description" Type="varchar" MaxLength="4095" />
+    <Property Name="GUIDINVLotSerial" Type="uniqueidentifier" />
+    <Property Name="QuantityOrdered" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Quantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="ComponentQuantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AssemblyComponentQuantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AssemblyQuantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="QuantityRejected" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Unit" Type="varchar" MaxLength="5" />
+    <Property Name="DisplayUnit" Type="varchar" MaxLength="5" />
+    <Property Name="DisplayUnitFactor" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="ValueDiscrepancy" Type="money" />
+    <Property Name="UnitCost" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="CostUnit" Type="varchar" MaxLength="5" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="FreezeCount" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="PhysicalCount" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="CountLineNumber" Type="int" />
+    <Property Name="Location" Type="varchar" MaxLength="80" />
+    <Property Name="ToLocation" Type="varchar" MaxLength="80" />
+    <Property Name="GUIDWHLocation" Type="uniqueidentifier" />
+    <Property Name="GUIDToWHLocation" Type="uniqueidentifier" />
+    <Property Name="PostedToINV" Type="bit" Nullable="false" />
+    <Property Name="PostedToAP" Type="bit" Nullable="false" />
+    <Property Name="PostedToGL" Type="bit" Nullable="false" />
+    <Property Name="Note" Type="text" />
+    <Property Name="InvoiceLineNumber" Type="int" />
+    <Property Name="InvoiceNumber" Type="varchar" MaxLength="40" />
+    <Property Name="OrderNumber" Type="varchar" MaxLength="40" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="GUIDWarehouse" Type="uniqueidentifier" />
+    <Property Name="CostLayer" Type="int" />
+    <Property Name="PostedTimestamp" Type="datetime" />
+    <Property Name="TransactionLine" Type="int" />
+    <Property Name="GLTransactionBatch" Type="int" />
+    <Property Name="TransactionPeriod" Type="int" />
+    <Property Name="TransactionYear" Type="int" />
+    <Property Name="GLTransactionLine" Type="int" />
+    <Property Name="AmountPostedToGL" Type="money" />
+    <Property Name="GUIDJournal" Type="uniqueidentifier" />
+    <Property Name="GUIDDebitAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDCreditAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDInvoiceDetail" Type="uniqueidentifier" />
+    <Property Name="GUIDOrderDetailLot" Type="uniqueidentifier" />
+    <Property Name="GUIDPODetail" Type="uniqueidentifier" />
+    <Property Name="PriorPeriodAdjustment" Type="bit" Nullable="false" />
+    <Property Name="FromCostMethod" Type="char" MaxLength="1" />
+    <Property Name="ToCostMethod" Type="char" MaxLength="1" />
+    <Property Name="DoNotSync" Type="bit" Nullable="false" />
+    <Property Name="GUIDTaxCode" Type="uniqueidentifier" />
+    <Property Name="SalesTax" Type="money" />
+    <Property Name="GUIDLayerBatch" Type="uniqueidentifier" />
+    <Property Name="GUIDAssociatedITD" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="cvINVTransactionDetailCrystalControl">
+    <Key>
+      <PropertyRef Name="GUIDINVTransactionDetail" />
+      <PropertyRef Name="PKIDINVTransactionDetail" />
+      <PropertyRef Name="TransactionType" />
+      <PropertyRef Name="PostedToINV" />
+      <PropertyRef Name="PostedToAP" />
+      <PropertyRef Name="PostedToGL" />
+      <PropertyRef Name="PriorPeriodAdjustment" />
+      <PropertyRef Name="DoNotSync" />
+    </Key>
+    <Property Name="GUIDINVTransactionDetail" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PKIDINVTransactionDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegNumber" Type="int" />
+    <Property Name="TransactionNumber" Type="int" />
+    <Property Name="TransactionType" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="PONumber" Type="varchar" MaxLength="40" />
+    <Property Name="GUIDProduct" Type="uniqueidentifier" />
+    <Property Name="ProductID" Type="varchar" MaxLength="159" />
+    <Property Name="VendorProductID" Type="varchar" MaxLength="25" />
+    <Property Name="Description" Type="varchar" MaxLength="4095" />
+    <Property Name="GUIDINVLotSerial" Type="uniqueidentifier" />
+    <Property Name="QuantityOrdered" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Quantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="ComponentQuantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AssemblyComponentQuantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AssemblyQuantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="QuantityRejected" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Unit" Type="varchar" MaxLength="5" />
+    <Property Name="DisplayUnit" Type="varchar" MaxLength="5" />
+    <Property Name="DisplayUnitFactor" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="ValueDiscrepancy" Type="money" />
+    <Property Name="UnitCost" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="CostUnit" Type="varchar" MaxLength="5" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="FreezeCount" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="PhysicalCount" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="CountLineNumber" Type="int" />
+    <Property Name="Location" Type="varchar" MaxLength="80" />
+    <Property Name="ToLocation" Type="varchar" MaxLength="80" />
+    <Property Name="GUIDWHLocation" Type="uniqueidentifier" />
+    <Property Name="GUIDToWHLocation" Type="uniqueidentifier" />
+    <Property Name="PostedToINV" Type="bit" Nullable="false" />
+    <Property Name="PostedToAP" Type="bit" Nullable="false" />
+    <Property Name="PostedToGL" Type="bit" Nullable="false" />
+    <Property Name="Note" Type="text" />
+    <Property Name="InvoiceLineNumber" Type="int" />
+    <Property Name="InvoiceNumber" Type="varchar" MaxLength="40" />
+    <Property Name="OrderNumber" Type="varchar" MaxLength="40" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="GUIDWarehouse" Type="uniqueidentifier" />
+    <Property Name="CostLayer" Type="int" />
+    <Property Name="PostedTimestamp" Type="datetime" />
+    <Property Name="TransactionLine" Type="int" />
+    <Property Name="GLTransactionBatch" Type="int" />
+    <Property Name="TransactionPeriod" Type="int" />
+    <Property Name="TransactionYear" Type="int" />
+    <Property Name="GLTransactionLine" Type="int" />
+    <Property Name="AmountPostedToGL" Type="money" />
+    <Property Name="GUIDJournal" Type="uniqueidentifier" />
+    <Property Name="GUIDDebitAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDCreditAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDInvoiceDetail" Type="uniqueidentifier" />
+    <Property Name="GUIDOrderDetailLot" Type="uniqueidentifier" />
+    <Property Name="GUIDPODetail" Type="uniqueidentifier" />
+    <Property Name="PriorPeriodAdjustment" Type="bit" Nullable="false" />
+    <Property Name="FromCostMethod" Type="char" MaxLength="1" />
+    <Property Name="ToCostMethod" Type="char" MaxLength="1" />
+    <Property Name="DoNotSync" Type="bit" Nullable="false" />
+    <Property Name="GUIDTaxCode" Type="uniqueidentifier" />
+    <Property Name="SalesTax" Type="money" />
+    <Property Name="GUIDLayerBatch" Type="uniqueidentifier" />
+    <Property Name="GUIDAssociatedITD" Type="uniqueidentifier" />
+    <Property Name="FProductCategory" Type="varchar" MaxLength="60" />
+    <Property Name="VariableQuantity" Type="bit" Nullable="true" />
+    <Property Name="FSignature" Type="binary" />
+    <Property Name="Sequence" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbNumbers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbNumbers">
+    <Key>
+      <PropertyRef Name="NumberType" />
+      <PropertyRef Name="NoWrap" />
+    </Key>
+    <Property Name="NumberType" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NextNumber" Type="int" />
+    <Property Name="LowNumber" Type="int" />
+    <Property Name="HighNumber" Type="int" />
+    <Property Name="Prefix" Type="varchar" MaxLength="10" />
+    <Property Name="Suffix" Type="varchar" MaxLength="10" />
+    <Property Name="NoWrap" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProduct">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Taxable" />
+      <PropertyRef Name="TaxByCategory" />
+      <PropertyRef Name="TaxInPrice" />
+      <PropertyRef Name="AllowOverride" />
+      <PropertyRef Name="AllowZero" />
+      <PropertyRef Name="VariableWeight" />
+      <PropertyRef Name="VariableLength" />
+      <PropertyRef Name="PriceByCategory" />
+      <PropertyRef Name="Discontinued" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="Popup" />
+      <PropertyRef Name="POPopup" />
+      <PropertyRef Name="VariableHeight" />
+      <PropertyRef Name="VariableVolume" />
+      <PropertyRef Name="VariableWidth" />
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="NotForResale" />
+      <PropertyRef Name="MaintainInventoryType" />
+      <PropertyRef Name="AvailOnWeb" />
+      <PropertyRef Name="ShipCompleteLots" />
+      <PropertyRef Name="Discountable" />
+    </Key>
+    <Property Name="ProductID" Type="varchar" MaxLength="159" Nullable="false" />
+    <Property Name="Taxable" Type="bit" Nullable="false" />
+    <Property Name="SalesGUIDTaxCode" Type="uniqueidentifier" />
+    <Property Name="PurchaseGUIDTaxCode" Type="uniqueidentifier" />
+    <Property Name="TaxByCategory" Type="bit" Nullable="false" />
+    <Property Name="GUIDTaxCategory" Type="uniqueidentifier" />
+    <Property Name="TaxInPrice" Type="bit" Nullable="false" />
+    <Property Name="AllowOverride" Type="bit" Nullable="false" />
+    <Property Name="AllowZero" Type="bit" Nullable="false" />
+    <Property Name="CommissionType" Type="smallint" />
+    <Property Name="CommPct" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="CommAmt" Type="money" />
+    <Property Name="Unit" Type="varchar" MaxLength="5" />
+    <Property Name="Weight" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Length" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="VariableWeight" Type="bit" Nullable="false" />
+    <Property Name="VariableLength" Type="bit" Nullable="false" />
+    <Property Name="Specification" Type="varchar" MaxLength="80" />
+    <Property Name="ProductPriceCategory" Type="varchar" MaxLength="25" />
+    <Property Name="PriceByCategory" Type="bit" Nullable="false" />
+    <Property Name="GUIDProductClass" Type="uniqueidentifier" />
+    <Property Name="LeadTime" Type="int" />
+    <Property Name="SalesCategory" Type="varchar" MaxLength="8" />
+    <Property Name="Discontinued" Type="bit" Nullable="false" />
+    <Property Name="CostMethod" Type="varchar" MaxLength="1" />
+    <Property Name="ProductType" Type="varchar" MaxLength="8" />
+    <Property Name="InventoryControlType" Type="varchar" MaxLength="1" />
+    <Property Name="AssemblyType" Type="varchar" MaxLength="1" />
+    <Property Name="CountCycle" Type="varchar" MaxLength="5" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="3" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="3" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="Note" Type="text" />
+    <Property Name="Popup" Type="bit" Nullable="false" />
+    <Property Name="PONote" Type="text" />
+    <Property Name="POPopup" Type="bit" Nullable="false" />
+    <Property Name="Color" Type="varchar" MaxLength="25" />
+    <Property Name="Height" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Size" Type="varchar" MaxLength="25" />
+    <Property Name="VariableHeight" Type="bit" Nullable="false" />
+    <Property Name="VariableVolume" Type="bit" Nullable="false" />
+    <Property Name="VariableWidth" Type="bit" Nullable="false" />
+    <Property Name="Volume" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Width" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="TechSpec" Type="text" />
+    <Property Name="WebAddress" Type="text" />
+    <Property Name="AltDescription" Type="varchar" MaxLength="4095" />
+    <Property Name="Description" Type="varchar" MaxLength="4095" />
+    <Property Name="GUIDProduct" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NotForResale" Type="bit" Nullable="false" />
+    <Property Name="MaintainInventoryType" Type="int" Nullable="false" />
+    <Property Name="AvailOnWeb" Type="bit" Nullable="false" />
+    <Property Name="ProductPicture" Type="image" />
+    <Property Name="ShipCompleteLots" Type="bit" Nullable="false" />
+    <Property Name="AltWeight" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltLength" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltHeight" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltWidth" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltVolume" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="AltUnitsPerPalletLayer" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="PalletLayers" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="InnerPackQty" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="OuterPackQty" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Discountable" Type="bit" Nullable="false" />
+    <Property Name="SalesUnit" Type="varchar" MaxLength="5" />
+    <Property Name="PurchaseUnit" Type="varchar" MaxLength="5" />
+    <Property Name="PackageUnit" Type="varchar" MaxLength="5" />
+    <Property Name="LandedCostFactor" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="_ControlGroup" Type="varchar" MaxLength="20" />
+    <Property Name="_ControlDataType" Type="varchar" MaxLength="20" />
+    <Property Name="_ControlMethod" Type="varchar" MaxLength="60" />
+    <Property Name="_ControlSpec" Type="varchar" MaxLength="500" />
+    <Property Name="_ControlMin" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="_ControlMax" Type="decimal" Precision="19" Scale="7" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProductClass' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProductClass">
+    <Key>
+      <PropertyRef Name="GUIDProductClass" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="GUIDProductClass" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ItemListID" Type="varchar" MaxLength="20" />
+    <Property Name="ProductClassID" Type="varchar" MaxLength="8" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="GUIDSalesAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDReturnsAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDTradeDiscountAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDCGSAccount" Type="uniqueidentifier" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="GUIDCGSAdjAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDClass" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProductComponent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProductComponent">
+    <Key>
+      <PropertyRef Name="GUIDProductComponent" />
+      <PropertyRef Name="GUIDProduct" />
+      <PropertyRef Name="ComponentGUIDProduct" />
+      <PropertyRef Name="VariableQuantity" />
+    </Key>
+    <Property Name="GUIDProductComponent" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GUIDProduct" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ComponentType" Type="varchar" MaxLength="1" />
+    <Property Name="ComponentGUIDProduct" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GUIDComponentWarehouse" Type="uniqueidentifier" />
+    <Property Name="Quantity" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="VariableQuantity" Type="bit" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="Sequence" Type="int" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProductControlType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProductControlType">
+    <Key>
+      <PropertyRef Name="InventoryControlType" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="InventoryControlType" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="25" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProductCostMethod' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProductCostMethod">
+    <Key>
+      <PropertyRef Name="CostMethod" />
+      <PropertyRef Name="LotSerialNumbered" />
+      <PropertyRef Name="Standard" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="CostMethod" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="25" />
+    <Property Name="LotSerialNumbered" Type="bit" Nullable="false" />
+    <Property Name="Standard" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProductionWorkflowStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProductionWorkflowStatus">
+    <Key>
+      <PropertyRef Name="GUIDProductionWorkflowStatus" />
+      <PropertyRef Name="ProductionWorkFlowStatus" />
+    </Key>
+    <Property Name="GUIDProductionWorkflowStatus" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductionWorkFlowStatus" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Abbreviation" Type="varchar" MaxLength="5" />
+    <Property Name="Sequence" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProductSalesCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProductSalesCategory">
+    <Key>
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="SalesCategory" />
+    </Key>
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="SalesCategory" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="GUIDSalesAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDReturnsAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDTradeDiscount" Type="uniqueidentifier" />
+    <Property Name="GUIDCOGSAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDClass" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProductType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProductType">
+    <Key>
+      <PropertyRef Name="ProductType" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="ProductType" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbProductUnit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbProductUnit">
+    <Key>
+      <PropertyRef Name="BaseUnit" />
+      <PropertyRef Name="Unit" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="Discrete" />
+    </Key>
+    <Property Name="BaseUnit" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Unit" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Factor" Type="decimal" Precision="19" Scale="7" />
+    <Property Name="FactorBasis" Type="varchar" MaxLength="1" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Discrete" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbSalespersonInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbSalespersonInfo">
+    <Key>
+      <PropertyRef Name="GUIDSalesperson" />
+      <PropertyRef Name="SalespersonID" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="GUIDSalesperson" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SalespersonListID" Type="varchar" MaxLength="20" />
+    <Property Name="SalespersonID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="41" />
+    <Property Name="LinkType" Type="char" MaxLength="1" />
+    <Property Name="GUIDLink" Type="uniqueidentifier" />
+    <Property Name="GUIDSalesAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDReturnsAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDTradeDiscount" Type="uniqueidentifier" />
+    <Property Name="GUIDCOGSAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDClass" Type="uniqueidentifier" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime" />
+    <Property Name="TimeModified" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbSystem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbSystem">
+    <Key>
+      <PropertyRef Name="GUID" />
+      <PropertyRef Name="SMTPEncryption" />
+      <PropertyRef Name="SMTPAuthRequired" />
+    </Key>
+    <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="59" />
+    <Property Name="City" Type="varchar" MaxLength="31" />
+    <Property Name="State" Type="varchar" MaxLength="21" />
+    <Property Name="Zip" Type="varchar" MaxLength="13" />
+    <Property Name="Country" Type="varchar" MaxLength="31" />
+    <Property Name="WebAddress" Type="text" />
+    <Property Name="EMail" Type="varchar" MaxLength="99" />
+    <Property Name="Phone" Type="varchar" MaxLength="51" />
+    <Property Name="FAX" Type="varchar" MaxLength="51" />
+    <Property Name="DBVersion" Type="varchar" MaxLength="10" />
+    <Property Name="Address1" Type="varchar" MaxLength="41" />
+    <Property Name="Address2" Type="varchar" MaxLength="41" />
+    <Property Name="Address3" Type="varchar" MaxLength="41" />
+    <Property Name="Address4" Type="varchar" MaxLength="41" />
+    <Property Name="EIN" Type="varchar" MaxLength="20" />
+    <Property Name="SSN" Type="varchar" MaxLength="16" />
+    <Property Name="FirstMonthFiscalYear" Type="int" />
+    <Property Name="Logo" Type="image" />
+    <Property Name="SMTPServer" Type="varchar" MaxLength="50" />
+    <Property Name="SMTPUserName" Type="varchar" MaxLength="50" />
+    <Property Name="SMTPPassword" Type="varchar" MaxLength="50" />
+    <Property Name="EmailType" Type="int" />
+    <Property Name="SMTPEncryption" Type="int" Nullable="false" />
+    <Property Name="SMTPAuthRequired" Type="bit" Nullable="false" />
+    <Property Name="QBMSConnectionTicket" Type="varchar" MaxLength="128" />
+    <Property Name="QuickBooksCountry" Type="varchar" MaxLength="2" />
+    <Property Name="DemoBaseDate" Type="datetime" />
+    <Property Name="MetricsLastSentDate" Type="datetime" />
+    <Property Name="GUIDHomeCurrency" Type="uniqueidentifier" />
+    <Property Name="GUIHexColor" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbSystemOption' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbSystemOption">
+    <Key>
+      <PropertyRef Name="OptionGroup" />
+      <PropertyRef Name="Option" />
+    </Key>
+    <Property Name="OptionGroup" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Option" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbWarehouse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbWarehouse">
+    <Key>
+      <PropertyRef Name="GUIDWarehouse" />
+      <PropertyRef Name="MaintainInventory" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="GUIDWarehouse" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="WarehouseID" Type="varchar" MaxLength="6" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="AssociatedGUIDBranch" Type="uniqueidentifier" />
+    <Property Name="GUIDInventoryAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDPurchaseAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDAdjustmentAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDAssemblyLaborAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDAssemblyOtherCostAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDIssueAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDNonInvOffsetAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDLaborOffsetAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDOtherChargeOffsetAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDShippingOffsetAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDLandedCostOffsetAccount" Type="uniqueidentifier" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="ShipToAttentionOf" Type="varchar" MaxLength="50" />
+    <Property Name="Address1" Type="varchar" MaxLength="41" />
+    <Property Name="Address2" Type="varchar" MaxLength="41" />
+    <Property Name="Address3" Type="varchar" MaxLength="41" />
+    <Property Name="Address4" Type="varchar" MaxLength="41" />
+    <Property Name="EMail" Type="varchar" MaxLength="99" />
+    <Property Name="ShipVia" Type="varchar" MaxLength="25" />
+    <Property Name="FOB" Type="varchar" MaxLength="25" />
+    <Property Name="MaintainInventory" Type="bit" Nullable="false" />
+    <Property Name="LaborCost" Type="money" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="31" />
+    <Property Name="Country" Type="varchar" MaxLength="31" />
+    <Property Name="FAX" Type="varchar" MaxLength="30" />
+    <Property Name="Phone" Type="varchar" MaxLength="30" />
+    <Property Name="State" Type="varchar" MaxLength="21" />
+    <Property Name="Zip" Type="varchar" MaxLength="13" />
+    <Property Name="GUIDGainLossAccount" Type="uniqueidentifier" />
+    <Property Name="GUIDPartner" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbWHLocation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbWHLocation">
+    <Key>
+      <PropertyRef Name="GUIDWHLocation" />
+      <PropertyRef Name="GUIDWarehouse" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="Active" />
+    </Key>
+    <Property Name="GUIDWHLocation" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GUIDWarehouse" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="Sequence" Type="int" />
+    <Property Name="Zone" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CerinimbusDev.dbo.tbWorkFlowStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbWorkFlowStatus">
+    <Key>
+      <PropertyRef Name="WorkFlowStatus" />
+    </Key>
+    <Property Name="WorkFlowStatus" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="SortOrder" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CerinimbusDevModelStoreContainer">
+    <EntitySet Name="cvAssemblyOrdersUnlinked" EntityType="Self.cvAssemblyOrdersUnlinked" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [cvAssemblyOrdersUnlinked].[Session] AS [Session],
+              [cvAssemblyOrdersUnlinked].[TransactionNumber] AS [TransactionNumber],
+              [cvAssemblyOrdersUnlinked].[TransactionDate] AS [TransactionDate],
+              [cvAssemblyOrdersUnlinked].[Reference] AS [Reference],
+              [cvAssemblyOrdersUnlinked].[Document] AS [Document],
+              [cvAssemblyOrdersUnlinked].[DocumentNum] AS [DocumentNum],
+              [cvAssemblyOrdersUnlinked].[DocumentDate] AS [DocumentDate],
+              [cvAssemblyOrdersUnlinked].[DocumentType] AS [DocumentType],
+              [cvAssemblyOrdersUnlinked].[AODescription] AS [AODescription],
+              [cvAssemblyOrdersUnlinked].[ProductionWorkflowStatus] AS [ProductionWorkflowStatus],
+              [cvAssemblyOrdersUnlinked].[AOQuantity] AS [AOQuantity],
+              [cvAssemblyOrdersUnlinked].[FProductID] AS [FProductID],
+              [cvAssemblyOrdersUnlinked].[FProductType] AS [FProductType],
+              [cvAssemblyOrdersUnlinked].[FProductRowType] AS [FProductRowType],
+              [cvAssemblyOrdersUnlinked].[FProductCategory] AS [FProductCategory],
+              [cvAssemblyOrdersUnlinked].[FProductSalesCategory] AS [FProductSalesCategory],
+              [cvAssemblyOrdersUnlinked].[AlternateProductID] AS [AlternateProductID],
+              [cvAssemblyOrdersUnlinked].[UPC] AS [UPC],
+              [cvAssemblyOrdersUnlinked].[FProductDescription] AS [FProductDescription],
+              [cvAssemblyOrdersUnlinked].[LotNumber] AS [LotNumber],
+              [cvAssemblyOrdersUnlinked].[WarehouseID] AS [WarehouseID],
+              [cvAssemblyOrdersUnlinked].[WarehouseName] AS [WarehouseName],
+              [cvAssemblyOrdersUnlinked].[PostedToGL] AS [PostedToGL],
+              [cvAssemblyOrdersUnlinked].[PostedToINV] AS [PostedToINV],
+              [cvAssemblyOrdersUnlinked].[parent] AS [parent],
+              [cvAssemblyOrdersUnlinked].[NumSiblings] AS [NumSiblings],
+              [cvAssemblyOrdersUnlinked].[NumTransactions] AS [NumTransactions],
+              [cvAssemblyOrdersUnlinked].[CompanyName] AS [CompanyName]
+              FROM [dbo].[cvAssemblyOrdersUnlinked] AS [cvAssemblyOrdersUnlinked]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="product" EntityType="Self.product" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>
+              SELECT
+              [product].[ProductID] AS [ProductID],
+              [product].[Taxable] AS [Taxable],
+              [product].[SalesGUIDTaxCode] AS [SalesGUIDTaxCode],
+              [product].[PurchaseGUIDTaxCode] AS [PurchaseGUIDTaxCode],
+              [product].[TaxByCategory] AS [TaxByCategory],
+              [product].[GUIDTaxCategory] AS [GUIDTaxCategory],
+              [product].[TaxInPrice] AS [TaxInPrice],
+              [product].[AllowOverride] AS [AllowOverride],
+              [product].[AllowZero] AS [AllowZero],
+              [product].[CommissionType] AS [CommissionType],
+              [product].[CommPct] AS [CommPct],
+              [product].[CommAmt] AS [CommAmt],
+              [product].[Unit] AS [Unit],
+              [product].[Weight] AS [Weight],
+              [product].[Length] AS [Length],
+              [product].[VariableWeight] AS [VariableWeight],
+              [product].[VariableLength] AS [VariableLength],
+              [product].[Specification] AS [Specification],
+              [product].[ProductPriceCategory] AS [ProductPriceCategory],
+              [product].[PriceByCategory] AS [PriceByCategory],
+              [product].[GUIDProductClass] AS [GUIDProductClass],
+              [product].[LeadTime] AS [LeadTime],
+              [product].[SalesCategory] AS [SalesCategory],
+              [product].[Discontinued] AS [Discontinued],
+              [product].[CostMethod] AS [CostMethod],
+              [product].[ProductType] AS [ProductType],
+              [product].[InventoryControlType] AS [InventoryControlType],
+              [product].[AssemblyType] AS [AssemblyType],
+              [product].[CountCycle] AS [CountCycle],
+              [product].[CreatedBy] AS [CreatedBy],
+              [product].[CreatedDate] AS [CreatedDate],
+              [product].[UpdatedBy] AS [UpdatedBy],
+              [product].[UpdatedDate] AS [UpdatedDate],
+              [product].[Status] AS [Status],
+              [product].[Note] AS [Note],
+              [product].[Popup] AS [Popup],
+              [product].[PONote] AS [PONote],
+              [product].[POPopup] AS [POPopup],
+              [product].[Color] AS [Color],
+              [product].[Height] AS [Height],
+              [product].[Size] AS [Size],
+              [product].[VariableHeight] AS [VariableHeight],
+              [product].[VariableVolume] AS [VariableVolume],
+              [product].[VariableWidth] AS [VariableWidth],
+              [product].[Volume] AS [Volume],
+              [product].[Width] AS [Width],
+              [product].[TechSpec] AS [TechSpec],
+              [product].[WebAddress] AS [WebAddress],
+              [product].[AltDescription] AS [AltDescription],
+              [product].[Description] AS [Description],
+              [product].[GUIDProduct] AS [GUIDProduct],
+              [product].[NotForResale] AS [NotForResale],
+              [product].[MaintainInventoryType] AS [MaintainInventoryType],
+              [product].[AvailOnWeb] AS [AvailOnWeb],
+              [product].[ProductPicture] AS [ProductPicture],
+              [product].[ShipCompleteLots] AS [ShipCompleteLots],
+              [product].[AltWeight] AS [AltWeight],
+              [product].[AltLength] AS [AltLength],
+              [product].[AltHeight] AS [AltHeight],
+              [product].[AltWidth] AS [AltWidth],
+              [product].[AltVolume] AS [AltVolume],
+              [product].[AltUnitsPerPalletLayer] AS [AltUnitsPerPalletLayer],
+              [product].[PalletLayers] AS [PalletLayers],
+              [product].[InnerPackQty] AS [InnerPackQty],
+              [product].[OuterPackQty] AS [OuterPackQty],
+              [product].[Discountable] AS [Discountable],
+              [product].[SalesUnit] AS [SalesUnit],
+              [product].[PurchaseUnit] AS [PurchaseUnit],
+              [product].[PackageUnit] AS [PackageUnit],
+              [product].[LandedCostFactor] AS [LandedCostFactor],
+              [product].[_ControlGroup] AS [_ControlGroup],
+              [product].[_ControlDataType] AS [_ControlDataType],
+              [product].[_ControlMethod] AS [_ControlMethod],
+              [product].[_ControlSpec] AS [_ControlSpec],
+              [product].[_ControlMin] AS [_ControlMin],
+              [product].[_ControlMax] AS [_ControlMax],
+              [product].[AlternateProductID] AS [AlternateProductID],
+              [product].[UPC] AS [UPC],
+              [product].[ShortDescription] AS [ShortDescription],
+              [product].[PiecesPerStockUnit] AS [PiecesPerStockUnit],
+              [product].[ProductClassID] AS [ProductClassID],
+              [product].[ItemType] AS [ItemType],
+              [product].[Keywords] AS [Keywords],
+              [product].[ExternalDocument] AS [ExternalDocument],
+              [product].[AlternateUnit] AS [AlternateUnit],
+              [product].[AlternateUnitConversionFactor] AS [AlternateUnitConversionFactor],
+              [product].[PreferredGUIDVendor] AS [PreferredGUIDVendor],
+              [product].[PreferredVendorID] AS [PreferredVendorID],
+              [product].[ListPrice] AS [ListPrice],
+              [product].[ListPriceType] AS [ListPriceType],
+              [product].[ListPriceUnit] AS [ListPriceUnit],
+              [product].[ListPriceTaxIncluded] AS [ListPriceTaxIncluded]
+              FROM [dbo].[product] AS [product]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProductAltID" EntityType="Self.ProductAltID" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ProductAltID].[GUIDProduct] AS [GUIDProduct], 
+    [ProductAltID].[ProductID] AS [ProductID], 
+    [ProductAltID].[AlternateProductID] AS [AlternateProductID], 
+    [ProductAltID].[Description] AS [Description], 
+    [ProductAltID].[UPC] AS [UPC]
+    FROM [dbo].[ProductAltID] AS [ProductAltID]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbAccess" EntityType="Self.tbAccess" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbAccess].[GUIDAccess] AS [GUIDAccess], 
+    [tbAccess].[ID] AS [ID], 
+    [tbAccess].[Password] AS [Password], 
+    [tbAccess].[Name] AS [Name], 
+    [tbAccess].[EMail] AS [EMail], 
+    [tbAccess].[EmailSignature] AS [EmailSignature], 
+    [tbAccess].[BCCAddress] AS [BCCAddress], 
+    [tbAccess].[MessageAddr] AS [MessageAddr], 
+    [tbAccess].[Active] AS [Active], 
+    [tbAccess].[GUIDSalesperson] AS [GUIDSalesperson], 
+    [tbAccess].[AutoOpenAlerts] AS [AutoOpenAlerts], 
+    [tbAccess].[AutoOpenActivities] AS [AutoOpenActivities], 
+    [tbAccess].[AutoOpenSchedule] AS [AutoOpenSchedule], 
+    [tbAccess].[DefaultActivityType] AS [DefaultActivityType], 
+    [tbAccess].[DefaultScheduleClass] AS [DefaultScheduleClass], 
+    [tbAccess].[AutoOpenDashboard] AS [AutoOpenDashboard], 
+    [tbAccess].[AutoOpenOrderManager] AS [AutoOpenOrderManager], 
+    [tbAccess].[RestrictBySalesperson] AS [RestrictBySalesperson], 
+    [tbAccess].[EmailSettingsOverride] AS [EmailSettingsOverride], 
+    [tbAccess].[SMTPServer] AS [SMTPServer], 
+    [tbAccess].[SMTPUserName] AS [SMTPUserName], 
+    [tbAccess].[SMTPPassword] AS [SMTPPassword], 
+    [tbAccess].[EmailType] AS [EmailType], 
+    [tbAccess].[SMTPEncryption] AS [SMTPEncryption], 
+    [tbAccess].[SMTPAuthRequired] AS [SMTPAuthRequired]
+    FROM [dbo].[tbAccess] AS [tbAccess]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbAccessPermission" EntityType="Self.tbAccessPermission" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbAccessPermission].[GUIDAccessPermission] AS [GUIDAccessPermission], 
+    [tbAccessPermission].[GUIDAccess] AS [GUIDAccess], 
+    [tbAccessPermission].[PermissionGroup] AS [PermissionGroup], 
+    [tbAccessPermission].[Permission] AS [Permission], 
+    [tbAccessPermission].[Option] AS [Option]
+    FROM [dbo].[tbAccessPermission] AS [tbAccessPermission]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbAccessPermissionGroup" EntityType="Self.tbAccessPermissionGroup" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbAccessPermissionGroup].[PermissionGroup] AS [PermissionGroup], 
+    [tbAccessPermissionGroup].[Description] AS [Description]
+    FROM [dbo].[tbAccessPermissionGroup] AS [tbAccessPermissionGroup]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbAccessPermissionMaster" EntityType="Self.tbAccessPermissionMaster" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbAccessPermissionMaster].[PermissionGroup] AS [PermissionGroup], 
+    [tbAccessPermissionMaster].[Permission] AS [Permission], 
+    [tbAccessPermissionMaster].[Description] AS [Description], 
+    [tbAccessPermissionMaster].[Options] AS [Options], 
+    [tbAccessPermissionMaster].[Default] AS [Default]
+    FROM [dbo].[tbAccessPermissionMaster] AS [tbAccessPermissionMaster]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbCustomDataList" EntityType="Self.tbCustomDataList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbCustomDataList].[ListID] AS [ListID], 
+    [tbCustomDataList].[Sequence] AS [Sequence], 
+    [tbCustomDataList].[ListItem] AS [ListItem]
+    FROM [dbo].[tbCustomDataList] AS [tbCustomDataList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbCustomField" EntityType="Self.tbCustomField" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbCustomField].[GUIDCustomField] AS [GUIDCustomField], 
+    [tbCustomField].[TableID] AS [TableID], 
+    [tbCustomField].[TableName] AS [TableName], 
+    [tbCustomField].[Sequence] AS [Sequence], 
+    [tbCustomField].[Label] AS [Label], 
+    [tbCustomField].[FieldName] AS [FieldName], 
+    [tbCustomField].[FieldType] AS [FieldType], 
+    [tbCustomField].[Extra] AS [Extra]
+    FROM [dbo].[tbCustomField] AS [tbCustomField]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbDocument" EntityType="Self.tbDocument" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbDocument].[GUIDDocument] AS [GUIDDocument], 
+    [tbDocument].[GUIDLink] AS [GUIDLink], 
+    [tbDocument].[LinkType] AS [LinkType], 
+    [tbDocument].[FileName] AS [FileName], 
+    [tbDocument].[FileExtension] AS [FileExtension], 
+    [tbDocument].[FileSize] AS [FileSize], 
+    [tbDocument].[Description] AS [Description], 
+    [tbDocument].[Note] AS [Note], 
+    [tbDocument].[DateAdded] AS [DateAdded], 
+    [tbDocument].[AddedBy] AS [AddedBy], 
+    [tbDocument].[DocumentData] AS [DocumentData]
+    FROM [dbo].[tbDocument] AS [tbDocument]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbEmployee" EntityType="Self.tbEmployee" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbEmployee].[GUIDEmployee] AS [GUIDEmployee], 
+    [tbEmployee].[EmployeeListID] AS [EmployeeListID], 
+    [tbEmployee].[EmployeeId] AS [EmployeeId], 
+    [tbEmployee].[PayrollEmployeeID] AS [PayrollEmployeeID], 
+    [tbEmployee].[CostRate] AS [CostRate], 
+    [tbEmployee].[BillingRate] AS [BillingRate], 
+    [tbEmployee].[LaborRate] AS [LaborRate], 
+    [tbEmployee].[Salutation] AS [Salutation], 
+    [tbEmployee].[FirstName] AS [FirstName], 
+    [tbEmployee].[MiddleName] AS [MiddleName], 
+    [tbEmployee].[LastName] AS [LastName], 
+    [tbEmployee].[Address1] AS [Address1], 
+    [tbEmployee].[Address2] AS [Address2], 
+    [tbEmployee].[Address3] AS [Address3], 
+    [tbEmployee].[Address4] AS [Address4], 
+    [tbEmployee].[City] AS [City], 
+    [tbEmployee].[State] AS [State], 
+    [tbEmployee].[Zip] AS [Zip], 
+    [tbEmployee].[Country] AS [Country], 
+    [tbEmployee].[HomePhoneNum] AS [HomePhoneNum], 
+    [tbEmployee].[EmergPhoneNum] AS [EmergPhoneNum], 
+    [tbEmployee].[EMail] AS [EMail], 
+    [tbEmployee].[JobTitle] AS [JobTitle], 
+    [tbEmployee].[DepartmentID] AS [DepartmentID], 
+    [tbEmployee].[LocationID] AS [LocationID], 
+    [tbEmployee].[Active] AS [Active], 
+    [tbEmployee].[Status] AS [Status], 
+    [tbEmployee].[CreatedDate] AS [CreatedDate], 
+    [tbEmployee].[UpdatedDate] AS [UpdatedDate]
+    FROM [dbo].[tbEmployee] AS [tbEmployee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbINVLotSerial" EntityType="Self.tbINVLotSerial" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbINVLotSerial].[GUIDINVLotSerial] AS [GUIDINVLotSerial], 
+    [tbINVLotSerial].[GUIDProduct] AS [GUIDProduct], 
+    [tbINVLotSerial].[Number] AS [Number], 
+    [tbINVLotSerial].[ExpirationDate] AS [ExpirationDate], 
+    [tbINVLotSerial].[Reference] AS [Reference], 
+    [tbINVLotSerial].[Location] AS [Location], 
+    [tbINVLotSerial].[Specification] AS [Specification]
+    FROM [dbo].[tbINVLotSerial] AS [tbINVLotSerial]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbINVRegister" EntityType="Self.tbINVRegister" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbINVRegister].[PKIDINVRegister] AS [PKIDINVRegister], 
+    [tbINVRegister].[GUIDINVRegister] AS [GUIDINVRegister], 
+    [tbINVRegister].[RegNumber] AS [RegNumber], 
+    [tbINVRegister].[RegDate] AS [RegDate], 
+    [tbINVRegister].[TransactionDate] AS [TransactionDate], 
+    [tbINVRegister].[Source] AS [Source], 
+    [tbINVRegister].[OpenedBy] AS [OpenedBy], 
+    [tbINVRegister].[Description] AS [Description], 
+    [tbINVRegister].[Amount] AS [Amount], 
+    [tbINVRegister].[PostedToINV] AS [PostedToINV], 
+    [tbINVRegister].[PostedToINVBy] AS [PostedToINVBy], 
+    [tbINVRegister].[DatePostedToINV] AS [DatePostedToINV], 
+    [tbINVRegister].[PostedToGL] AS [PostedToGL], 
+    [tbINVRegister].[PostedToGLBy] AS [PostedToGLBy], 
+    [tbINVRegister].[DatePostedToGL] AS [DatePostedToGL], 
+    [tbINVRegister].[PostedToAP] AS [PostedToAP], 
+    [tbINVRegister].[PostedToAPBy] AS [PostedToAPBy], 
+    [tbINVRegister].[DatePostedToAP] AS [DatePostedToAP], 
+    [tbINVRegister].[Note] AS [Note], 
+    [tbINVRegister].[GLTransactionBatch] AS [GLTransactionBatch], 
+    [tbINVRegister].[TransactionPeriod] AS [TransactionPeriod], 
+    [tbINVRegister].[TransactionYear] AS [TransactionYear], 
+    [tbINVRegister].[ParentRegNumber] AS [ParentRegNumber], 
+    [tbINVRegister].[GUIDLandedCostPODetail] AS [GUIDLandedCostPODetail], 
+    [tbINVRegister].[VoidedDate] AS [VoidedDate], 
+    [tbINVRegister].[VoidedBy] AS [VoidedBy], 
+    [tbINVRegister].[GUIDOrder] AS [GUIDOrder]
+    FROM [dbo].[tbINVRegister] AS [tbINVRegister]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbINVTransaction" EntityType="Self.tbINVTransaction" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbINVTransaction].[PKIDINVTransaction] AS [PKIDINVTransaction], 
+    [tbINVTransaction].[GUIDINVTransaction] AS [GUIDINVTransaction], 
+    [tbINVTransaction].[RegNumber] AS [RegNumber], 
+    [tbINVTransaction].[TransactionNumber] AS [TransactionNumber], 
+    [tbINVTransaction].[GUIDWarehouse] AS [GUIDWarehouse], 
+    [tbINVTransaction].[GUIDToWarehouse] AS [GUIDToWarehouse], 
+    [tbINVTransaction].[DocumentType] AS [DocumentType], 
+    [tbINVTransaction].[DocumentDate] AS [DocumentDate], 
+    [tbINVTransaction].[AssemblyType] AS [AssemblyType], 
+    [tbINVTransaction].[VendorInvoiceID] AS [VendorInvoiceID], 
+    [tbINVTransaction].[GLTransactionNumber] AS [GLTransactionNumber], 
+    [tbINVTransaction].[GUIDGLInventoryAccount] AS [GUIDGLInventoryAccount], 
+    [tbINVTransaction].[GUIDGLOffsetAccount] AS [GUIDGLOffsetAccount], 
+    [tbINVTransaction].[PostedToGL] AS [PostedToGL], 
+    [tbINVTransaction].[PostedToAP] AS [PostedToAP], 
+    [tbINVTransaction].[PostedToINV] AS [PostedToINV], 
+    [tbINVTransaction].[GUIDVendor] AS [GUIDVendor], 
+    [tbINVTransaction].[VendorName] AS [VendorName], 
+    [tbINVTransaction].[PONumber] AS [PONumber], 
+    [tbINVTransaction].[ExchangeRate] AS [ExchangeRate], 
+    [tbINVTransaction].[Reference] AS [Reference], 
+    [tbINVTransaction].[Document] AS [Document], 
+    [tbINVTransaction].[Description] AS [Description], 
+    [tbINVTransaction].[Note] AS [Note], 
+    [tbINVTransaction].[TransactionPeriod] AS [TransactionPeriod], 
+    [tbINVTransaction].[GUIDProductionWorkflowStatus] AS [GUIDProductionWorkflowStatus], 
+    [tbINVTransaction].[TaxIncluded] AS [TaxIncluded], 
+    [tbINVTransaction].[BeginningOfDay] AS [BeginningOfDay], 
+    [tbINVTransaction].[InvoiceAmount] AS [InvoiceAmount], 
+    [tbINVTransaction].[SalesTax] AS [SalesTax], 
+    [tbINVTransaction].[GUIDInProgressUser] AS [GUIDInProgressUser], 
+    [tbINVTransaction].[InProgressDate] AS [InProgressDate], 
+    [tbINVTransaction].[GUIDOrderDetail] AS [GUIDOrderDetail]
+    FROM [dbo].[tbINVTransaction] AS [tbINVTransaction]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbINVTransactionDetail" EntityType="Self.tbINVTransactionDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbINVTransactionDetail].[GUIDINVTransactionDetail] AS [GUIDINVTransactionDetail], 
+    [tbINVTransactionDetail].[PKIDINVTransactionDetail] AS [PKIDINVTransactionDetail], 
+    [tbINVTransactionDetail].[RegNumber] AS [RegNumber], 
+    [tbINVTransactionDetail].[TransactionNumber] AS [TransactionNumber], 
+    [tbINVTransactionDetail].[TransactionType] AS [TransactionType], 
+    [tbINVTransactionDetail].[PONumber] AS [PONumber], 
+    [tbINVTransactionDetail].[GUIDProduct] AS [GUIDProduct], 
+    [tbINVTransactionDetail].[ProductID] AS [ProductID], 
+    [tbINVTransactionDetail].[VendorProductID] AS [VendorProductID], 
+    [tbINVTransactionDetail].[Description] AS [Description], 
+    [tbINVTransactionDetail].[GUIDINVLotSerial] AS [GUIDINVLotSerial], 
+    [tbINVTransactionDetail].[QuantityOrdered] AS [QuantityOrdered], 
+    [tbINVTransactionDetail].[Quantity] AS [Quantity], 
+    [tbINVTransactionDetail].[ComponentQuantity] AS [ComponentQuantity], 
+    [tbINVTransactionDetail].[AssemblyComponentQuantity] AS [AssemblyComponentQuantity], 
+    [tbINVTransactionDetail].[AssemblyQuantity] AS [AssemblyQuantity], 
+    [tbINVTransactionDetail].[QuantityRejected] AS [QuantityRejected], 
+    [tbINVTransactionDetail].[Unit] AS [Unit], 
+    [tbINVTransactionDetail].[DisplayUnit] AS [DisplayUnit], 
+    [tbINVTransactionDetail].[DisplayUnitFactor] AS [DisplayUnitFactor], 
+    [tbINVTransactionDetail].[ValueDiscrepancy] AS [ValueDiscrepancy], 
+    [tbINVTransactionDetail].[UnitCost] AS [UnitCost], 
+    [tbINVTransactionDetail].[CostUnit] AS [CostUnit], 
+    [tbINVTransactionDetail].[Amount] AS [Amount], 
+    [tbINVTransactionDetail].[FreezeCount] AS [FreezeCount], 
+    [tbINVTransactionDetail].[PhysicalCount] AS [PhysicalCount], 
+    [tbINVTransactionDetail].[CountLineNumber] AS [CountLineNumber], 
+    [tbINVTransactionDetail].[Location] AS [Location], 
+    [tbINVTransactionDetail].[ToLocation] AS [ToLocation], 
+    [tbINVTransactionDetail].[GUIDWHLocation] AS [GUIDWHLocation], 
+    [tbINVTransactionDetail].[GUIDToWHLocation] AS [GUIDToWHLocation], 
+    [tbINVTransactionDetail].[PostedToINV] AS [PostedToINV], 
+    [tbINVTransactionDetail].[PostedToAP] AS [PostedToAP], 
+    [tbINVTransactionDetail].[PostedToGL] AS [PostedToGL], 
+    [tbINVTransactionDetail].[Note] AS [Note], 
+    [tbINVTransactionDetail].[InvoiceLineNumber] AS [InvoiceLineNumber], 
+    [tbINVTransactionDetail].[InvoiceNumber] AS [InvoiceNumber], 
+    [tbINVTransactionDetail].[OrderNumber] AS [OrderNumber], 
+    [tbINVTransactionDetail].[TransactionDate] AS [TransactionDate], 
+    [tbINVTransactionDetail].[GUIDWarehouse] AS [GUIDWarehouse], 
+    [tbINVTransactionDetail].[CostLayer] AS [CostLayer], 
+    [tbINVTransactionDetail].[PostedTimestamp] AS [PostedTimestamp], 
+    [tbINVTransactionDetail].[TransactionLine] AS [TransactionLine], 
+    [tbINVTransactionDetail].[GLTransactionBatch] AS [GLTransactionBatch], 
+    [tbINVTransactionDetail].[TransactionPeriod] AS [TransactionPeriod], 
+    [tbINVTransactionDetail].[TransactionYear] AS [TransactionYear], 
+    [tbINVTransactionDetail].[GLTransactionLine] AS [GLTransactionLine], 
+    [tbINVTransactionDetail].[AmountPostedToGL] AS [AmountPostedToGL], 
+    [tbINVTransactionDetail].[GUIDJournal] AS [GUIDJournal], 
+    [tbINVTransactionDetail].[GUIDDebitAccount] AS [GUIDDebitAccount], 
+    [tbINVTransactionDetail].[GUIDCreditAccount] AS [GUIDCreditAccount], 
+    [tbINVTransactionDetail].[GUIDInvoiceDetail] AS [GUIDInvoiceDetail], 
+    [tbINVTransactionDetail].[GUIDOrderDetailLot] AS [GUIDOrderDetailLot], 
+    [tbINVTransactionDetail].[GUIDPODetail] AS [GUIDPODetail], 
+    [tbINVTransactionDetail].[PriorPeriodAdjustment] AS [PriorPeriodAdjustment], 
+    [tbINVTransactionDetail].[FromCostMethod] AS [FromCostMethod], 
+    [tbINVTransactionDetail].[ToCostMethod] AS [ToCostMethod], 
+    [tbINVTransactionDetail].[DoNotSync] AS [DoNotSync], 
+    [tbINVTransactionDetail].[GUIDTaxCode] AS [GUIDTaxCode], 
+    [tbINVTransactionDetail].[SalesTax] AS [SalesTax], 
+    [tbINVTransactionDetail].[GUIDLayerBatch] AS [GUIDLayerBatch], 
+    [tbINVTransactionDetail].[GUIDAssociatedITD] AS [GUIDAssociatedITD]
+    FROM [dbo].[tbINVTransactionDetail] AS [tbINVTransactionDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="cvINVTransactionDetailCrystalControl" EntityType="Self.cvINVTransactionDetailCrystalControl" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [cvINVTransactionDetailCrystalControl].[GUIDINVTransactionDetail] AS [GUIDINVTransactionDetail], 
+    [cvINVTransactionDetailCrystalControl].[PKIDINVTransactionDetail] AS [PKIDINVTransactionDetail], 
+    [cvINVTransactionDetailCrystalControl].[RegNumber] AS [RegNumber], 
+    [cvINVTransactionDetailCrystalControl].[TransactionNumber] AS [TransactionNumber], 
+    [cvINVTransactionDetailCrystalControl].[TransactionType] AS [TransactionType], 
+    [cvINVTransactionDetailCrystalControl].[PONumber] AS [PONumber], 
+    [cvINVTransactionDetailCrystalControl].[GUIDProduct] AS [GUIDProduct], 
+    [cvINVTransactionDetailCrystalControl].[ProductID] AS [ProductID], 
+    [cvINVTransactionDetailCrystalControl].[VendorProductID] AS [VendorProductID], 
+    [cvINVTransactionDetailCrystalControl].[Description] AS [Description], 
+    [cvINVTransactionDetailCrystalControl].[GUIDINVLotSerial] AS [GUIDINVLotSerial], 
+    [cvINVTransactionDetailCrystalControl].[QuantityOrdered] AS [QuantityOrdered], 
+    [cvINVTransactionDetailCrystalControl].[Quantity] AS [Quantity], 
+    [cvINVTransactionDetailCrystalControl].[ComponentQuantity] AS [ComponentQuantity], 
+    [cvINVTransactionDetailCrystalControl].[AssemblyComponentQuantity] AS [AssemblyComponentQuantity], 
+    [cvINVTransactionDetailCrystalControl].[AssemblyQuantity] AS [AssemblyQuantity], 
+    [cvINVTransactionDetailCrystalControl].[QuantityRejected] AS [QuantityRejected], 
+    [cvINVTransactionDetailCrystalControl].[Unit] AS [Unit], 
+    [cvINVTransactionDetailCrystalControl].[DisplayUnit] AS [DisplayUnit], 
+    [cvINVTransactionDetailCrystalControl].[DisplayUnitFactor] AS [DisplayUnitFactor], 
+    [cvINVTransactionDetailCrystalControl].[ValueDiscrepancy] AS [ValueDiscrepancy], 
+    [cvINVTransactionDetailCrystalControl].[UnitCost] AS [UnitCost], 
+    [cvINVTransactionDetailCrystalControl].[CostUnit] AS [CostUnit], 
+    [cvINVTransactionDetailCrystalControl].[Amount] AS [Amount], 
+    [cvINVTransactionDetailCrystalControl].[FreezeCount] AS [FreezeCount], 
+    [cvINVTransactionDetailCrystalControl].[PhysicalCount] AS [PhysicalCount], 
+    [cvINVTransactionDetailCrystalControl].[CountLineNumber] AS [CountLineNumber], 
+    [cvINVTransactionDetailCrystalControl].[Location] AS [Location], 
+    [cvINVTransactionDetailCrystalControl].[ToLocation] AS [ToLocation], 
+    [cvINVTransactionDetailCrystalControl].[GUIDWHLocation] AS [GUIDWHLocation], 
+    [cvINVTransactionDetailCrystalControl].[GUIDToWHLocation] AS [GUIDToWHLocation], 
+    [cvINVTransactionDetailCrystalControl].[PostedToINV] AS [PostedToINV], 
+    [cvINVTransactionDetailCrystalControl].[PostedToAP] AS [PostedToAP], 
+    [cvINVTransactionDetailCrystalControl].[PostedToGL] AS [PostedToGL], 
+    [cvINVTransactionDetailCrystalControl].[Note] AS [Note], 
+    [cvINVTransactionDetailCrystalControl].[InvoiceLineNumber] AS [InvoiceLineNumber], 
+    [cvINVTransactionDetailCrystalControl].[InvoiceNumber] AS [InvoiceNumber], 
+    [cvINVTransactionDetailCrystalControl].[OrderNumber] AS [OrderNumber], 
+    [cvINVTransactionDetailCrystalControl].[TransactionDate] AS [TransactionDate], 
+    [cvINVTransactionDetailCrystalControl].[GUIDWarehouse] AS [GUIDWarehouse], 
+    [cvINVTransactionDetailCrystalControl].[CostLayer] AS [CostLayer], 
+    [cvINVTransactionDetailCrystalControl].[PostedTimestamp] AS [PostedTimestamp], 
+    [cvINVTransactionDetailCrystalControl].[TransactionLine] AS [TransactionLine], 
+    [cvINVTransactionDetailCrystalControl].[GLTransactionBatch] AS [GLTransactionBatch], 
+    [cvINVTransactionDetailCrystalControl].[TransactionPeriod] AS [TransactionPeriod], 
+    [cvINVTransactionDetailCrystalControl].[TransactionYear] AS [TransactionYear], 
+    [cvINVTransactionDetailCrystalControl].[GLTransactionLine] AS [GLTransactionLine], 
+    [cvINVTransactionDetailCrystalControl].[AmountPostedToGL] AS [AmountPostedToGL], 
+    [cvINVTransactionDetailCrystalControl].[GUIDJournal] AS [GUIDJournal], 
+    [cvINVTransactionDetailCrystalControl].[GUIDDebitAccount] AS [GUIDDebitAccount], 
+    [cvINVTransactionDetailCrystalControl].[GUIDCreditAccount] AS [GUIDCreditAccount], 
+    [cvINVTransactionDetailCrystalControl].[GUIDInvoiceDetail] AS [GUIDInvoiceDetail], 
+    [cvINVTransactionDetailCrystalControl].[GUIDOrderDetailLot] AS [GUIDOrderDetailLot], 
+    [cvINVTransactionDetailCrystalControl].[GUIDPODetail] AS [GUIDPODetail], 
+    [cvINVTransactionDetailCrystalControl].[PriorPeriodAdjustment] AS [PriorPeriodAdjustment], 
+    [cvINVTransactionDetailCrystalControl].[FromCostMethod] AS [FromCostMethod], 
+    [cvINVTransactionDetailCrystalControl].[ToCostMethod] AS [ToCostMethod], 
+    [cvINVTransactionDetailCrystalControl].[DoNotSync] AS [DoNotSync], 
+    [cvINVTransactionDetailCrystalControl].[GUIDTaxCode] AS [GUIDTaxCode], 
+    [cvINVTransactionDetailCrystalControl].[SalesTax] AS [SalesTax], 
+    [cvINVTransactionDetailCrystalControl].[GUIDLayerBatch] AS [GUIDLayerBatch], 
+    [cvINVTransactionDetailCrystalControl].[GUIDAssociatedITD] AS [GUIDAssociatedITD], 
+    [cvINVTransactionDetailCrystalControl].[FProductCategory] AS [FProductCategory], 
+    [cvINVTransactionDetailCrystalControl].[VariableQuantity] AS [VariableQuantity],
+    [cvINVTransactionDetailCrystalControl].[FSignature] AS [FSignature],
+    [cvINVTransactionDetailCrystalControl].[Sequence] AS [Sequence]
+    FROM [dbo].[cvINVTransactionDetailCrystalControl] AS [cvINVTransactionDetailCrystalControl]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbNumbers" EntityType="Self.tbNumbers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbNumbers].[NumberType] AS [NumberType], 
+    [tbNumbers].[NextNumber] AS [NextNumber], 
+    [tbNumbers].[LowNumber] AS [LowNumber], 
+    [tbNumbers].[HighNumber] AS [HighNumber], 
+    [tbNumbers].[Prefix] AS [Prefix], 
+    [tbNumbers].[Suffix] AS [Suffix], 
+    [tbNumbers].[NoWrap] AS [NoWrap]
+    FROM [dbo].[tbNumbers] AS [tbNumbers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProduct" EntityType="Self.tbProduct" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProduct].[ProductID] AS [ProductID], 
+    [tbProduct].[Taxable] AS [Taxable], 
+    [tbProduct].[SalesGUIDTaxCode] AS [SalesGUIDTaxCode], 
+    [tbProduct].[PurchaseGUIDTaxCode] AS [PurchaseGUIDTaxCode], 
+    [tbProduct].[TaxByCategory] AS [TaxByCategory], 
+    [tbProduct].[GUIDTaxCategory] AS [GUIDTaxCategory], 
+    [tbProduct].[TaxInPrice] AS [TaxInPrice], 
+    [tbProduct].[AllowOverride] AS [AllowOverride], 
+    [tbProduct].[AllowZero] AS [AllowZero], 
+    [tbProduct].[CommissionType] AS [CommissionType], 
+    [tbProduct].[CommPct] AS [CommPct], 
+    [tbProduct].[CommAmt] AS [CommAmt], 
+    [tbProduct].[Unit] AS [Unit], 
+    [tbProduct].[Weight] AS [Weight], 
+    [tbProduct].[Length] AS [Length], 
+    [tbProduct].[VariableWeight] AS [VariableWeight], 
+    [tbProduct].[VariableLength] AS [VariableLength], 
+    [tbProduct].[Specification] AS [Specification], 
+    [tbProduct].[ProductPriceCategory] AS [ProductPriceCategory], 
+    [tbProduct].[PriceByCategory] AS [PriceByCategory], 
+    [tbProduct].[GUIDProductClass] AS [GUIDProductClass], 
+    [tbProduct].[LeadTime] AS [LeadTime], 
+    [tbProduct].[SalesCategory] AS [SalesCategory], 
+    [tbProduct].[Discontinued] AS [Discontinued], 
+    [tbProduct].[CostMethod] AS [CostMethod], 
+    [tbProduct].[ProductType] AS [ProductType], 
+    [tbProduct].[InventoryControlType] AS [InventoryControlType], 
+    [tbProduct].[AssemblyType] AS [AssemblyType], 
+    [tbProduct].[CountCycle] AS [CountCycle], 
+    [tbProduct].[CreatedBy] AS [CreatedBy], 
+    [tbProduct].[CreatedDate] AS [CreatedDate], 
+    [tbProduct].[UpdatedBy] AS [UpdatedBy], 
+    [tbProduct].[UpdatedDate] AS [UpdatedDate], 
+    [tbProduct].[Status] AS [Status], 
+    [tbProduct].[Note] AS [Note], 
+    [tbProduct].[Popup] AS [Popup], 
+    [tbProduct].[PONote] AS [PONote], 
+    [tbProduct].[POPopup] AS [POPopup], 
+    [tbProduct].[Color] AS [Color], 
+    [tbProduct].[Height] AS [Height], 
+    [tbProduct].[Size] AS [Size], 
+    [tbProduct].[VariableHeight] AS [VariableHeight], 
+    [tbProduct].[VariableVolume] AS [VariableVolume], 
+    [tbProduct].[VariableWidth] AS [VariableWidth], 
+    [tbProduct].[Volume] AS [Volume], 
+    [tbProduct].[Width] AS [Width], 
+    [tbProduct].[TechSpec] AS [TechSpec], 
+    [tbProduct].[WebAddress] AS [WebAddress], 
+    [tbProduct].[AltDescription] AS [AltDescription], 
+    [tbProduct].[Description] AS [Description], 
+    [tbProduct].[GUIDProduct] AS [GUIDProduct], 
+    [tbProduct].[NotForResale] AS [NotForResale], 
+    [tbProduct].[MaintainInventoryType] AS [MaintainInventoryType], 
+    [tbProduct].[AvailOnWeb] AS [AvailOnWeb], 
+    [tbProduct].[ProductPicture] AS [ProductPicture], 
+    [tbProduct].[ShipCompleteLots] AS [ShipCompleteLots], 
+    [tbProduct].[AltWeight] AS [AltWeight], 
+    [tbProduct].[AltLength] AS [AltLength], 
+    [tbProduct].[AltHeight] AS [AltHeight], 
+    [tbProduct].[AltWidth] AS [AltWidth], 
+    [tbProduct].[AltVolume] AS [AltVolume], 
+    [tbProduct].[AltUnitsPerPalletLayer] AS [AltUnitsPerPalletLayer], 
+    [tbProduct].[PalletLayers] AS [PalletLayers], 
+    [tbProduct].[InnerPackQty] AS [InnerPackQty], 
+    [tbProduct].[OuterPackQty] AS [OuterPackQty], 
+    [tbProduct].[Discountable] AS [Discountable], 
+    [tbProduct].[SalesUnit] AS [SalesUnit], 
+    [tbProduct].[PurchaseUnit] AS [PurchaseUnit], 
+    [tbProduct].[PackageUnit] AS [PackageUnit], 
+    [tbProduct].[LandedCostFactor] AS [LandedCostFactor], 
+    [tbProduct].[_ControlGroup] AS [_ControlGroup], 
+    [tbProduct].[_ControlDataType] AS [_ControlDataType], 
+    [tbProduct].[_ControlMethod] AS [_ControlMethod], 
+    [tbProduct].[_ControlSpec] AS [_ControlSpec], 
+    [tbProduct].[_ControlMin] AS [_ControlMin], 
+    [tbProduct].[_ControlMax] AS [_ControlMax]
+    FROM [dbo].[tbProduct] AS [tbProduct]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProductClass" EntityType="Self.tbProductClass" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProductClass].[GUIDProductClass] AS [GUIDProductClass], 
+    [tbProductClass].[ItemListID] AS [ItemListID], 
+    [tbProductClass].[ProductClassID] AS [ProductClassID], 
+    [tbProductClass].[Description] AS [Description], 
+    [tbProductClass].[GUIDSalesAccount] AS [GUIDSalesAccount], 
+    [tbProductClass].[GUIDReturnsAccount] AS [GUIDReturnsAccount], 
+    [tbProductClass].[GUIDTradeDiscountAccount] AS [GUIDTradeDiscountAccount], 
+    [tbProductClass].[GUIDCGSAccount] AS [GUIDCGSAccount], 
+    [tbProductClass].[Active] AS [Active], 
+    [tbProductClass].[GUIDCGSAdjAccount] AS [GUIDCGSAdjAccount], 
+    [tbProductClass].[GUIDClass] AS [GUIDClass]
+    FROM [dbo].[tbProductClass] AS [tbProductClass]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProductComponent" EntityType="Self.tbProductComponent" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProductComponent].[GUIDProductComponent] AS [GUIDProductComponent], 
+    [tbProductComponent].[GUIDProduct] AS [GUIDProduct], 
+    [tbProductComponent].[ComponentType] AS [ComponentType], 
+    [tbProductComponent].[ComponentGUIDProduct] AS [ComponentGUIDProduct], 
+    [tbProductComponent].[GUIDComponentWarehouse] AS [GUIDComponentWarehouse], 
+    [tbProductComponent].[Quantity] AS [Quantity], 
+    [tbProductComponent].[VariableQuantity] AS [VariableQuantity], 
+    [tbProductComponent].[Cost] AS [Cost], 
+    [tbProductComponent].[Sequence] AS [Sequence], 
+    [tbProductComponent].[Note] AS [Note]
+    FROM [dbo].[tbProductComponent] AS [tbProductComponent]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProductControlType" EntityType="Self.tbProductControlType" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProductControlType].[InventoryControlType] AS [InventoryControlType], 
+    [tbProductControlType].[Description] AS [Description], 
+    [tbProductControlType].[Active] AS [Active]
+    FROM [dbo].[tbProductControlType] AS [tbProductControlType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProductCostMethod" EntityType="Self.tbProductCostMethod" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProductCostMethod].[CostMethod] AS [CostMethod], 
+    [tbProductCostMethod].[Description] AS [Description], 
+    [tbProductCostMethod].[LotSerialNumbered] AS [LotSerialNumbered], 
+    [tbProductCostMethod].[Standard] AS [Standard], 
+    [tbProductCostMethod].[Active] AS [Active]
+    FROM [dbo].[tbProductCostMethod] AS [tbProductCostMethod]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProductionWorkflowStatus" EntityType="Self.tbProductionWorkflowStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProductionWorkflowStatus].[GUIDProductionWorkflowStatus] AS [GUIDProductionWorkflowStatus], 
+    [tbProductionWorkflowStatus].[ProductionWorkFlowStatus] AS [ProductionWorkFlowStatus], 
+    [tbProductionWorkflowStatus].[Description] AS [Description], 
+    [tbProductionWorkflowStatus].[Abbreviation] AS [Abbreviation], 
+    [tbProductionWorkflowStatus].[Sequence] AS [Sequence]
+    FROM [dbo].[tbProductionWorkflowStatus] AS [tbProductionWorkflowStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProductSalesCategory" EntityType="Self.tbProductSalesCategory" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProductSalesCategory].[Active] AS [Active], 
+    [tbProductSalesCategory].[Description] AS [Description], 
+    [tbProductSalesCategory].[SalesCategory] AS [SalesCategory], 
+    [tbProductSalesCategory].[GUIDSalesAccount] AS [GUIDSalesAccount], 
+    [tbProductSalesCategory].[GUIDReturnsAccount] AS [GUIDReturnsAccount], 
+    [tbProductSalesCategory].[GUIDTradeDiscount] AS [GUIDTradeDiscount], 
+    [tbProductSalesCategory].[GUIDCOGSAccount] AS [GUIDCOGSAccount], 
+    [tbProductSalesCategory].[GUIDClass] AS [GUIDClass]
+    FROM [dbo].[tbProductSalesCategory] AS [tbProductSalesCategory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProductType" EntityType="Self.tbProductType" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProductType].[ProductType] AS [ProductType], 
+    [tbProductType].[Description] AS [Description], 
+    [tbProductType].[Active] AS [Active]
+    FROM [dbo].[tbProductType] AS [tbProductType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbProductUnit" EntityType="Self.tbProductUnit" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbProductUnit].[BaseUnit] AS [BaseUnit], 
+    [tbProductUnit].[Unit] AS [Unit], 
+    [tbProductUnit].[Factor] AS [Factor], 
+    [tbProductUnit].[FactorBasis] AS [FactorBasis], 
+    [tbProductUnit].[Active] AS [Active], 
+    [tbProductUnit].[Discrete] AS [Discrete]
+    FROM [dbo].[tbProductUnit] AS [tbProductUnit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbSalespersonInfo" EntityType="Self.tbSalespersonInfo" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbSalespersonInfo].[GUIDSalesperson] AS [GUIDSalesperson], 
+    [tbSalespersonInfo].[SalespersonListID] AS [SalespersonListID], 
+    [tbSalespersonInfo].[SalespersonID] AS [SalespersonID], 
+    [tbSalespersonInfo].[Name] AS [Name], 
+    [tbSalespersonInfo].[LinkType] AS [LinkType], 
+    [tbSalespersonInfo].[GUIDLink] AS [GUIDLink], 
+    [tbSalespersonInfo].[GUIDSalesAccount] AS [GUIDSalesAccount], 
+    [tbSalespersonInfo].[GUIDReturnsAccount] AS [GUIDReturnsAccount], 
+    [tbSalespersonInfo].[GUIDTradeDiscount] AS [GUIDTradeDiscount], 
+    [tbSalespersonInfo].[GUIDCOGSAccount] AS [GUIDCOGSAccount], 
+    [tbSalespersonInfo].[GUIDClass] AS [GUIDClass], 
+    [tbSalespersonInfo].[Status] AS [Status], 
+    [tbSalespersonInfo].[TimeCreated] AS [TimeCreated], 
+    [tbSalespersonInfo].[TimeModified] AS [TimeModified]
+    FROM [dbo].[tbSalespersonInfo] AS [tbSalespersonInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbSystem" EntityType="Self.tbSystem" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbSystem].[GUID] AS [GUID], 
+    [tbSystem].[Name] AS [Name], 
+    [tbSystem].[City] AS [City], 
+    [tbSystem].[State] AS [State], 
+    [tbSystem].[Zip] AS [Zip], 
+    [tbSystem].[Country] AS [Country], 
+    [tbSystem].[WebAddress] AS [WebAddress], 
+    [tbSystem].[EMail] AS [EMail], 
+    [tbSystem].[Phone] AS [Phone], 
+    [tbSystem].[FAX] AS [FAX], 
+    [tbSystem].[DBVersion] AS [DBVersion], 
+    [tbSystem].[Address1] AS [Address1], 
+    [tbSystem].[Address2] AS [Address2], 
+    [tbSystem].[Address3] AS [Address3], 
+    [tbSystem].[Address4] AS [Address4], 
+    [tbSystem].[EIN] AS [EIN], 
+    [tbSystem].[SSN] AS [SSN], 
+    [tbSystem].[FirstMonthFiscalYear] AS [FirstMonthFiscalYear], 
+    [tbSystem].[Logo] AS [Logo], 
+    [tbSystem].[SMTPServer] AS [SMTPServer], 
+    [tbSystem].[SMTPUserName] AS [SMTPUserName], 
+    [tbSystem].[SMTPPassword] AS [SMTPPassword], 
+    [tbSystem].[EmailType] AS [EmailType], 
+    [tbSystem].[SMTPEncryption] AS [SMTPEncryption], 
+    [tbSystem].[SMTPAuthRequired] AS [SMTPAuthRequired], 
+    [tbSystem].[QBMSConnectionTicket] AS [QBMSConnectionTicket], 
+    [tbSystem].[QuickBooksCountry] AS [QuickBooksCountry], 
+    [tbSystem].[DemoBaseDate] AS [DemoBaseDate], 
+    [tbSystem].[MetricsLastSentDate] AS [MetricsLastSentDate], 
+    [tbSystem].[GUIDHomeCurrency] AS [GUIDHomeCurrency], 
+    [tbSystem].[GUIHexColor] AS [GUIHexColor]
+    FROM [dbo].[tbSystem] AS [tbSystem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbSystemOption" EntityType="Self.tbSystemOption" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbSystemOption].[OptionGroup] AS [OptionGroup], 
+    [tbSystemOption].[Option] AS [Option], 
+    [tbSystemOption].[Value] AS [Value]
+    FROM [dbo].[tbSystemOption] AS [tbSystemOption]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbWarehouse" EntityType="Self.tbWarehouse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbWarehouse].[GUIDWarehouse] AS [GUIDWarehouse], 
+    [tbWarehouse].[WarehouseID] AS [WarehouseID], 
+    [tbWarehouse].[Description] AS [Description], 
+    [tbWarehouse].[AssociatedGUIDBranch] AS [AssociatedGUIDBranch], 
+    [tbWarehouse].[GUIDInventoryAccount] AS [GUIDInventoryAccount], 
+    [tbWarehouse].[GUIDPurchaseAccount] AS [GUIDPurchaseAccount], 
+    [tbWarehouse].[GUIDAdjustmentAccount] AS [GUIDAdjustmentAccount], 
+    [tbWarehouse].[GUIDAssemblyLaborAccount] AS [GUIDAssemblyLaborAccount], 
+    [tbWarehouse].[GUIDAssemblyOtherCostAccount] AS [GUIDAssemblyOtherCostAccount], 
+    [tbWarehouse].[GUIDIssueAccount] AS [GUIDIssueAccount], 
+    [tbWarehouse].[GUIDNonInvOffsetAccount] AS [GUIDNonInvOffsetAccount], 
+    [tbWarehouse].[GUIDLaborOffsetAccount] AS [GUIDLaborOffsetAccount], 
+    [tbWarehouse].[GUIDOtherChargeOffsetAccount] AS [GUIDOtherChargeOffsetAccount], 
+    [tbWarehouse].[GUIDShippingOffsetAccount] AS [GUIDShippingOffsetAccount], 
+    [tbWarehouse].[GUIDLandedCostOffsetAccount] AS [GUIDLandedCostOffsetAccount], 
+    [tbWarehouse].[Name] AS [Name], 
+    [tbWarehouse].[ShipToAttentionOf] AS [ShipToAttentionOf], 
+    [tbWarehouse].[Address1] AS [Address1], 
+    [tbWarehouse].[Address2] AS [Address2], 
+    [tbWarehouse].[Address3] AS [Address3], 
+    [tbWarehouse].[Address4] AS [Address4], 
+    [tbWarehouse].[EMail] AS [EMail], 
+    [tbWarehouse].[ShipVia] AS [ShipVia], 
+    [tbWarehouse].[FOB] AS [FOB], 
+    [tbWarehouse].[MaintainInventory] AS [MaintainInventory], 
+    [tbWarehouse].[LaborCost] AS [LaborCost], 
+    [tbWarehouse].[Active] AS [Active], 
+    [tbWarehouse].[City] AS [City], 
+    [tbWarehouse].[Country] AS [Country], 
+    [tbWarehouse].[FAX] AS [FAX], 
+    [tbWarehouse].[Phone] AS [Phone], 
+    [tbWarehouse].[State] AS [State], 
+    [tbWarehouse].[Zip] AS [Zip], 
+    [tbWarehouse].[GUIDGainLossAccount] AS [GUIDGainLossAccount], 
+    [tbWarehouse].[GUIDPartner] AS [GUIDPartner]
+    FROM [dbo].[tbWarehouse] AS [tbWarehouse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbWHLocation" EntityType="Self.tbWHLocation" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbWHLocation].[GUIDWHLocation] AS [GUIDWHLocation], 
+    [tbWHLocation].[GUIDWarehouse] AS [GUIDWarehouse], 
+    [tbWHLocation].[Description] AS [Description], 
+    [tbWHLocation].[Sequence] AS [Sequence], 
+    [tbWHLocation].[Zone] AS [Zone], 
+    [tbWHLocation].[Active] AS [Active]
+    FROM [dbo].[tbWHLocation] AS [tbWHLocation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbWorkFlowStatus" EntityType="Self.tbWorkFlowStatus" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbWorkFlowStatus].[WorkFlowStatus] AS [WorkFlowStatus], 
+    [tbWorkFlowStatus].[Description] AS [Description], 
+    [tbWorkFlowStatus].[SortOrder] AS [SortOrder]
+    FROM [dbo].[tbWorkFlowStatus] AS [tbWorkFlowStatus]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

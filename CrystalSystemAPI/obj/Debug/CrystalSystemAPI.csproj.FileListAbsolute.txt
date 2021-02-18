@@ -1,0 +1,44 @@
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.csproj.CoreCompileInputs.cache
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\csc.exe
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\System.Collections.Immutable.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\System.Reflection.Metadata.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\vbc.exe
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\VBCSCompiler.exe
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\VBCSCompiler.exe.config
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\CrystalSystemAPI.dll.config
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\CrystalSystemAPI.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\CrystalSystemAPI.pdb
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\Antlr3.Runtime.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\bin\Antlr3.Runtime.pdb
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.csproj.CopyComplete
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.dll
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.pdb
+W:\Work\CrystalSystem\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.csprojAssemblyReference.cache
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\csc.exe
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\System.Collections.Immutable.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\System.Reflection.Metadata.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\vbc.exe
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\VBCSCompiler.exe
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\roslyn\VBCSCompiler.exe.config
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\CrystalSystemAPI.dll.config
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\CrystalSystemAPI.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\CrystalSystemAPI.pdb
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\Antlr3.Runtime.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\bin\Antlr3.Runtime.pdb
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.csprojAssemblyReference.cache
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.csproj.CoreCompileInputs.cache
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.csproj.CopyComplete
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.dll
+W:\Work\Crystal System\bACKUP\20210218\CrystalSystemAPI\CrystalSystemAPI\obj\Debug\CrystalSystemAPI.pdb
